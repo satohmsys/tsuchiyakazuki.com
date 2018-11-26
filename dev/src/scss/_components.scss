@@ -1,0 +1,210 @@
+//////////////////////////////////////////
+
+//components
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+////////////////////
+
+// button element
+
+////////////////////
+
+.button{
+    width: 300px;
+    height: 100px;
+    line-height: 1;
+  a{
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        box-sizing: border-box;
+      position: relative;
+      font-family: $fontFamily_en;
+      color: #ffffff;
+      background-color: $basefontColor;
+
+      @include mouseOver(){
+          &:before{
+              width: 100%;
+              left: 0;
+              right: auto;
+          }
+          &:after{
+              width: 0;
+            left: auto;
+            right: -15px;
+
+          }
+      }
+
+      &:before{
+          content: " ";
+          width: 0%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+          display: block;
+          transition: transition();
+            background-color: rgba( #fff, 0.1 );
+      }
+
+
+      &:after{
+          content: " ";
+          width: 30px;
+          height: 1px;
+          margin: auto;
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: calc( 100% - 15px );
+          transition: transition();          
+          background-color: #ffffff;
+
+		@include mq( tab ){
+			width: 20px;
+              left: calc( 100% - 10px );
+
+		}
+		@include mq( sp ){
+			width: 14px;
+              left: calc( 100% - 7px );
+		}
+
+
+      }
+  }
+}
+
+
+
+////////////////////
+
+// mask efffect
+
+////////////////////
+
+%maskeElement{
+    &:before {
+        content: " ";
+        left: auto;
+        right: 0;
+        animation: maskmove 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s 1 normal;
+    }
+
+    &__element {
+        overflow: hidden;
+        white-space: normal;
+        display: inherit;
+        transform: translateX(0%);
+    }
+}
+
+// .js-effect {
+    .mask{
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        &:before{
+            content: " ";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            transform: scaleX( 0 );
+            transform-origin: left center;
+            // transition: transition();
+            transition-delay: 0.15s;
+            background-color: $basefontColor;
+            will-change:transform;
+        }
+        &__element{
+            white-space: nowrap;
+            display: inline-block;
+            transform: translateX( -100% );
+            transition: transition(all, 0.5s);
+            transition-delay: 0.2s;
+            will-change: transform;            
+        }
+    }  
+// }
+
+// .-on,
+.current{
+    .mask{
+        &:before{
+            content: " ";
+            left: auto;
+            right: 0;
+            animation: maskmove 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s 1 normal;
+        }
+        &__element{
+            white-space: normal;
+            display: inherit;
+            transform: translateX( 0% );
+        }            
+    }
+}
+.-on{
+    @include mq( tab ){
+        .mask {
+            &:before {
+                content: " ";
+                left: auto;
+                right: 0;
+                animation: maskmove 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s 1 normal;
+            }
+
+            &__element {
+                white-space: normal;
+                display: inherit;
+                transform: translateX(0%);
+            }
+        }
+    } 
+}
+
+
+
+.fade{
+    &__element{
+        display: inline-block;
+        opacity: 0;
+        transform: translateY( -2rem );
+        transition: easeInOut(all, 0.5s);
+        transition-delay: 0.2s;
+        will-change: transform;           
+    }                    
+}   
+
+.current{
+    .fade{
+        &__element{
+            opacity: 1;
+            transform: translateY( 0% );
+        }                    
+    }
+}
+.-on{
+    @include mq( tab ){
+        .fade {
+            &__element {
+                display: inherit;
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+    } 
+}  

@@ -1,0 +1,121 @@
+//////////////////////////////////////////
+
+//アニメーション
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+@keyframes marqueeee{
+    0%{
+        transform: translateX( 0 );        
+    }    
+    100%{
+        transform: translateX( 48% );        
+    }    
+}
+
+@keyframes scrollbar{
+    0%{
+        top: 0;
+        height: 0px;
+    }
+    25%{
+        height: 100%;
+    }
+    50%{
+        top: auto;
+        bottom: 0;
+        height: 100%;
+    }
+    75%{
+        height: 0;
+    }    
+    100%{
+        top: 0;
+        bottom: auto;
+        height: 0;
+    }
+}
+@keyframes scrollbar-bottom{
+    // 0%{
+    //     bottom: 0;
+    //     height: 0px;
+    // }
+    // 25%{
+    //     height: 100%;
+    // }
+    // 50%{
+    //     bottom: auto;
+    //     top: 0;
+    //     height: 100%;
+    // }
+    // 75%{
+    //     height: 0;
+    // }    
+    // 100%{
+    //     bottom: 0;
+    //     top: auto;
+    //     height: 0;
+    // }
+    0%{
+        bottom: 0;
+        height: 0px;
+    }
+    25%{
+        height: 100%;
+    }
+    50%{
+        bottom: auto;
+        top: 0;
+        height: 100%;
+    }
+    75%{
+        height: 0;
+    }    
+    100%{
+        bottom: 0;
+        top: auto;
+        height: 0;
+    }    
+}
+// @keyframes scrollbar{
+//     0%{
+//         height: 30px;
+//         bottom: 30px;
+//     }
+//     25%{
+//         // height: 100%;
+//     }
+//     50%{
+//         bottom: 0px;
+//         height: 30px;
+//     }
+//     75%{
+//         height: 0;
+//     }    
+//     100%{
+//         bottom: 30px;
+//         height: 0;
+//     }
+// }
+
+
+@keyframes maskmove{
+    0%{
+        // width: 0;
+        transform: scaleX(0);
+        left: 0;
+    }
+    50%{
+        // width: 100%;
+        transform: scaleX( 1 );
+    }
+
+    100%{
+        // width: 0;
+        transform: scaleX(0);
+
+        left: 101%;
+    }
+}

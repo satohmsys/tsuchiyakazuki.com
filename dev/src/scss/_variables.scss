@@ -1,0 +1,131 @@
+//////////////////////////////////////////
+
+//valiables
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+//////////
+
+// path
+
+//////////
+
+// $img : "img";
+// $js : "js";
+// $icon : "#{$fonts}/icomoon/fonts";
+
+
+
+//////////
+
+// fonts
+
+//////////
+
+$fontFamily :'Noto Sans JP', sans-serif;
+$fontFamily_en : 'Barlow Semi Condensed', sans-serif;
+
+
+$basefontColor : $basefontColor;
+$basefontSize : 1rem;
+$baselineHeight : 1.75;
+
+$fontsize_text: 1.5em;
+
+
+
+//////////////////////
+
+// layouts 
+
+/////////////////////
+
+//column
+$innerWidth: 1000px;
+$outerWidth:1200px;
+
+//margin / padding
+$space_s : 40px;
+$space_m : $space_s*1.5;
+$space_l : $space_m*2;
+
+$space_s_sp : 20px;
+$space_m_sp : $space_s_sp*1.5;
+$space_l_sp : $space_s_sp*2.5;
+
+
+
+//////////////////////
+
+// fonts
+
+/////////////////////
+$fontsize_s		: #{( 12 / 14)}em;
+$fontsize_m		: #{( 16 / 14)}em;
+$fontsize_m_sp	: #{( 16 / 13)}em;
+$fontsize_l		: #{( 18 / 14)}em;
+$fontsize_l_sp	: #{( 20 / 13)}em;
+$fontsize_xl	: #{( 24 / 14)}em;
+$fontsize_xl_sp	: #{( 22 / 13)}em;
+
+$fontsize_index_s : $fontsize_l;
+$fontsize_index_s_en : $fontsize_m;
+$fontsize_index_m : $fontsize_xl;
+$fontsize_index_m_en : $fontsize_xl;
+
+$fontsize_index_s_sp : $fontsize_m_sp;
+$fontsize_index_m_sp : $fontsize_l_sp;
+$fontsize_index_l_sp : $fontsize_xl_sp;
+
+// $fontsize_attention
+// $fontsize_title
+
+
+
+//////////////////////
+
+// property
+
+/////////////////////
+$radius: 5px;
+
+
+//////////////////////
+
+// responsive 
+
+/////////////////////
+
+////////breakpoint
+// $bpSmp : 480px;
+$bpSmp : 640px;
+$bpTab : 780px;
+$bpPc : 1366px;
+
+
+/////
+// 高さを計算する（概算値
+// $height
+//
+@function heightCalc( $mediaType, $height, $rate: 1.78 ){
+	@if ($mediaType == pc ){
+		@return floor($height / $rate);	
+	} @else {
+		@return floor($height * $rate);	
+	}
+}
+
+$bpSmpMax-width : "max-width : #{$bpSmp}";
+$bpSmpMin-width : "min-width : #{$bpSmp}";
+$bpTabMax-width : "max-width : #{$bpTab}";
+$bpTabMin-width : "min-width : #{$bpTab}";
+$bpPcMax-width: "max-width : #{$bpPc}";
+$bpPcMin-width: "min-width : #{$bpPc}";
+
+$bpSmpMax-height : "max-height :" + heightCalc(sp, $bpSmp);
+$bpSmpMin-height : "min-height :" + heightCalc(sp, $bpSmp);
+$bpTabMax-height : "max-height :" + heightCalc(tabl, $bpTab);
+$bpTabMin-height : "min-height :" + heightCalc(tabl, $bpTab);
+$bpPcMax-height: "max-height :" + heightCalc( pc, $bpPc);

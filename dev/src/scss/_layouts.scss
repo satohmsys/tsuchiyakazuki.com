@@ -1,0 +1,37 @@
+//////////////////////////////////////////
+
+//layout
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+%lastChild{
+	&:last-child{
+		margin-right: 0;
+	}	
+}
+
+
+//////// カラムレイアウト
+.section--contentsColmun > .wrap{
+
+	@include mq( tab, min ){
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	
+		///// 左
+		section:nth-child( odd ){
+			width: percentage( 765 / 1230 );
+			margin-bottom: 0;	
+			margin-right:  percentage( 100 / 1230 );	
+		}
+		
+		////右
+		section:nth-child( even ){
+			width: percentage( 365 / 1230 );
+			margin-bottom: 0;	
+		}
+	} 
+}
