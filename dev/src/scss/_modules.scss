@@ -186,7 +186,7 @@ body{
 		font-size: $fontsize_xl;
 		
 		@include mq( tab ){
-			font-size: $fontsize_m_sp;
+			// font-size: $fontsize_m_sp;
 		}		
 	}
 

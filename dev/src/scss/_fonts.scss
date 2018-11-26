@@ -6,7 +6,7 @@
 
 //////////////////////////////////////////
 
-@import url( 'https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,300,400|Noto+Sans+JP:400,700' );
+@import url( 'https://fonts.googleapis.com/css?family=M+PLUS+1p:500,800' );
 
 
 // @font-face {
@@ -16,6 +16,67 @@
 //   font-style: normal;
 //   font-weight: normal;
 // }
+@font-face {
+  font-family: 'kaiso';
+  src: url('../fonts/kaiso/Kaiso-Next-B.woff') format('woff'),
+     url('../fonts/kaiso/Kaiso-Next-B.otf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/icomoon.eot?c5z8io');
+  src:  url('../fonts/icomoon/icomoon.eot?c5z8io#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/icomoon.ttf?c5z8io') format('truetype'),
+    url('../fonts/icomoon/icomoon.woff?c5z8io') format('woff'),
+    url('../fonts/icomoon/icomoon.svg?c5z8io#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-icon-arrow:before {
+  content: "\e900";
+  color: #fff;
+}
+
+
+
+// @font-face {
+//   font-family: "YakuHanJP";
+//   font-style: normal;
+//   font-weight: 400;
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Regular.eot");
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Regular.woff2") format("woff2"),
+//   url("../fonts/YakuHanJP/YakuHanJP-Regular.woff") format("woff");
+// }
+
+// @font-face {
+//   font-family: "YakuHanJP";
+//   font-style: normal;
+//   font-weight: 500;
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Medium.eot");
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Medium.woff2") format("woff2"),
+//   url("../fonts/YakuHanJP/YakuHanJP-Medium.woff") format("woff");
+// }
+
+// // @font-face {
+// //   font-family: "YakuHanJP";
+// //   font-style: normal;
+// //   font-weight: 700;
+// //   src: url("../fonts/YakuHanJP/YakuHanJP-Bold.eot");
+// //   src: url("../fonts/YakuHanJP/YakuHanJP-Bold.woff2") format("woff2"),
+// //   url("../fonts/YakuHanJP/YakuHanJP-Bold.woff") format("woff");
+// // }
+
+// @font-face {
+//   font-family: "YakuHanJP";
+//   font-style: normal;
+//   font-weight: 900;
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Black.eot");
+//   src: url("../fonts/YakuHanJP/YakuHanJP-Black.woff2") format("woff2"),
+//   url("../fonts/YakuHanJP/YakuHanJP-Black.woff") format("woff");
+// }
+
 
 
 // 【明朝】　font-family:Times New Roman , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", Hiragino Mincho ProN , "MSP明朝","MS PMincho","MS 明朝",serif;
