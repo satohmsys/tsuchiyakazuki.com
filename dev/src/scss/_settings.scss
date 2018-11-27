@@ -27,10 +27,6 @@ html{
 	-webkit-font-smoothing: antialiased;
 	 -webkit-text-size-adjust: 100%;
 	color: $basefontColor;
-
-	@include mq( tab ){
-		line-height: ( 44 / 26);
-	}	
 }
 
 body{

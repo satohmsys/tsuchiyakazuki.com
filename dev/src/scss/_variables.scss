@@ -53,9 +53,10 @@ $space_m : 50px;
 $space_l : 70px;
 $space_xl : 100px;
 
-$space_s_sp : 20px;
-$space_m_sp : $space_s_sp*1.5;
-$space_l_sp : $space_s_sp*2.5;
+$space_s_sp : 30px;
+$space_m_sp : 40px;
+$space_l_sp : 60px;
+$space_xl_sp : 80px;
 
 
 
@@ -66,11 +67,11 @@ $space_l_sp : $space_s_sp*2.5;
 /////////////////////
 $fontsize_s		: #{( 14 / 17)}em;
 $fontsize_m		: #{( 22 / 17)}em;
-// $fontsize_m_sp	: #{( 16 / 13)}em;
+$fontsize_m_sp	: #{( 22 / 17)}em;
 $fontsize_l		: #{( 27 / 17)}em;
-// $fontsize_l_sp	: #{( 20 / 13)}em;
+$fontsize_l_sp	: #{( 27 / 17)}em;
 $fontsize_xl	: #{( 32 / 17)}em;
-// $fontsize_xl_sp	: #{( 22 / 13)}em;
+$fontsize_xl_sp	: #{( 32 / 17)}em;
 
 $fontsize_index_s : $fontsize_l;
 $fontsize_index_s_en : $fontsize_m;

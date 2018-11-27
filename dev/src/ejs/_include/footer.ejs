@@ -2,8 +2,8 @@
     <section class="siteFooter__message">
         <header class="siteFooter__message__index">
             <div class="wrap">
-                <h3 class="sitefooter__message__index__text">
-                    <img src="<%- $path %>../img/common-footer-message-index.svg" width="258" alt="メッセージ紹介">
+                <h3 class="siteFooter__message__index__text">
+                    メッセージ紹介
                 </h3>
             </div>
         </header>
@@ -12,7 +12,7 @@
                 <article class="message">
                     <header class="message__index">
                         <h4 class="message__index__name">
-                            <strong>小野寺浩太</strong><small>さん</small>（カーリング選手）
+                            <strong>小野寺浩太</strong><small>さん</small><br class="-only-sp">（カーリング選手）
                         </h4>
                         <p class="message__index__description">
                         東京を拠点に活躍。‘15 アジアパシフィックツアー優勝、’17 日本選手権8位。
@@ -37,7 +37,7 @@
                 <figure class="recruitment__mv">
                     <img src="<%- $src %>common-footer-member-mv.jpg" width="830" alt="">
                     <figcaption class="recruitment__mv__index">
-                        <img src="<%- $src %>common-footer-member-index.svg" width="638" alt="「あなたと。」">
+                       「あなたと。」
                     </figcaption>
                 </figure>
                 <section class="recruitment__content">
@@ -185,4 +185,9 @@
         </div>
     </section>
 </footer>
+<i class="navToggle">
+    <i class="navToggle__line">
+    </i>
+    <span class="navToggle__span">メニュー</span>
+</i>
 <%- include( '_scripts.ejs' ); %>

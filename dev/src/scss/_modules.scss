@@ -62,12 +62,12 @@ body{
 			position: relative;
 			z-index: 9;
 			img{
-				max-width: 120px;
+				max-width: 130px;
 			}
 		}	
 		@include mq( sp ){
 			img{
-				max-width: 90px;
+				// max-width: 130px;
 			}
 		}					
 	}
@@ -89,6 +89,27 @@ body{
 					color: $color_link;
 				}		
 			}
+		}
+
+		@include mq( tab ){
+			padding: 1em;
+			position: fixed;
+			right: 20px;
+			bottom: 70px;
+			opacity: 0;
+			transition: easeOutBack( all, 1s );
+			transform: translateY( 20px );
+			pointer-events: none;
+			border-radius: 10px;
+			box-shadow: 5px 5px 40px rgba( $blue, 0.1 );
+			background-color: #ffffff;
+		}
+	}
+	@at-root .-is-navOpen .siteHeader .siteNav{
+		@include mq( tab ){		
+			pointer-events: all; 
+			opacity: 1;
+			transform: translateY( 0 );
 		}
 	}
 	
@@ -116,7 +137,6 @@ body{
 	////////メッセージ
 	&__message{
 
-
 		&:after{
 			content: " ";
 			width: 100%;
@@ -124,6 +144,9 @@ body{
 			display: block;
 			@include stripe();
 
+			@include mq( tab ){
+				height: 60px;
+			}
 		}
 
 		&__index{
@@ -132,10 +155,36 @@ body{
 			padding-bottom: 100px;
 			text-align: center;
 			@include stripe();			// background-repeat: repeat;
+
+			@include mq( tab ){
+				padding-top: 30px;
+				padding-bottom: 60px;
+				margin-bottom: -30px;
+			}
+
+
+			&__text{
+				height: 0;
+				padding-top: 1em;
+				line-height: 1;
+				// font-family: 'kaiso';
+				overflow: hidden;
+				font-feature-settings: "palt";
+				letter-spacing: -0.15em;   
+				font-size: 3em;     
+				background-image: url(../img/common-footer-message-index.svg);
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+				background-position: center center;				
+			}
 		}
 
 		&__content{
 			padding-bottom: $space_m;
+
+			@include mq( tab ){
+				padding-bottom: 30px;
+			}
 		}
 
 
@@ -148,10 +197,20 @@ body{
 			border: 4px solid $color_border;
 			background-color: #ffffff;
 
+			@include mq( tab ){
+				padding: 20px;
+			}			
+
+
 			&__index{
 				line-height: 1;
 				margin-bottom: $space_s;
 				text-align: center;
+
+				@include mq( tab ){
+					line-height: 1.45;
+					margin-bottom: $space_s_sp;
+				}				
 
 				&__name{
 					margin-bottom: 20px;
@@ -174,11 +233,29 @@ body{
 			&__content{
 				display: flex;
 
+				@include mq( tab ){
+					flex-direction: column-reverse;
+				}				
+
 				&__text{
 					margin-right: $space_s;
+				
+					@include mq( tab ){
+						margin-right: 0;
+					}						
 				}
 				&__img{
 					flex-shrink: 0;
+
+					@include mq( tab ){
+						text-align: center;
+					}
+
+					img{
+						@include mq( tab ){
+							width: 150px;
+						}						
+					}
 				}
 			}
 		}
@@ -208,16 +285,35 @@ body{
 				top: -50px;
 				z-index: 1;
 
+				@include mq( tab ){
+					top: -30px;
+					margin-bottom: -30px;
+				}
+
+
 				&__index{
+					line-height: 1;
 					margin-top: -70px;
+					margin-bottom: $space_s;
 					position: relative;
 					z-index: 1;
+					font-weight: bold;
+					font-size: 7em;
+
+					@include mq( tab ){
+						margin-top: -0.5em;
+						font-size: 15vw;
+					}						
 				}
 			}
 
 
 			&__content{
 				margin-bottom: $space_m;
+
+				@include mq( tab ){
+					margin-bottom: $space_m_sp;
+				}					
 			}
 
 			&__content__footer{
@@ -228,8 +324,18 @@ body{
 				font-size: $fontsize_m;
 				font-weight: bold;
 
+				@include mq( tab ){
+					font-size: $fontsize_m_sp;
+					
+				}
+
+
 				&--sub{
 					margin-bottom: $space_s;
+
+					@include mq( tab ){
+						margin-bottom: $space_s_sp;
+					}						
 				}
 			}
 
@@ -238,7 +344,12 @@ body{
 				padding: 30px;
 				border: 1px solid #fff;
 
+				@include mq( tab ){
+					padding: 20px;
+				}	
+
 				&__index{
+					margin-top: 0;
 					font-weight: bold;
 				}
 
@@ -249,10 +360,6 @@ body{
 			}
 
 		}
-
-		
-
-
 	}
 
 
@@ -261,14 +368,29 @@ body{
 		padding-top: $space_m;
 		padding-bottom: $space_m;
 
+		@include mq( tab ){
+			padding-top: $space_m_sp;
+			padding-bottom: $space_m_sp;
+		}		
+
+
 		.related{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 
+			@include mq( tab ){
+				flex-direction: column;
+			}
+
+
 			&__section{
 				width: calc( 50% - 25px );
 				text-align: left;
+
+				@include mq( tab ){
+					width: 100%;
+				}				
 			}
 			&__section__index{
 				line-height: 1;
@@ -279,16 +401,28 @@ body{
 				span{
 					font-size: 1.5em;
 					color: $color_text_accent;
+
+					@include mq( tab ){
+						font-size: 1.25em;
+					}						
 				}
 			}
 		}
 
 
 		.profile{	
-			margin-bottom: $space_m;
+			margin-bottom: $space_m;		
+
+			@include mq( tab ){
+				margin-bottom: $space_m_sp;		
+			}			
 
 			&__content {
 				margin-bottom: $space_s;
+
+				@include mq( tab ){
+					margin-bottom: $space_s_sp;
+				}				
 			}
 
 			&__footer{
@@ -304,6 +438,11 @@ body{
 			padding: 30px;
 			border: 1px solid $color_border;
 
+			@include mq( tab ){
+				padding: 20px;
+			}			
+
+
 			&__index{
 				line-height: 1;
 				margin-bottom: 1em;
@@ -312,22 +451,32 @@ body{
 
 			&__content{
 				font-size: $fontsize_s;
+
+				@include mq( tab ){
+					font-size: 1em;		
+				}			
 			}
 
 			&__row{
 				display: flex;
 				margin-bottom: 5px;
+
+				@include mq( tab ){
+					flex-direction: column;
+				}			
 			}
 
 			&__col{
 				display: flex;
 
 				&:not( :last-child ):after{
-					content:"|";
-					margin-left: 1em;
-					margin-right: 1em;
-					display: inline-block;
-					color: $color_border;
+					@include mq( sp, min ){
+						content:"|";
+						margin-left: 1em;
+						margin-right: 1em;
+						display: inline-block;
+						color: $color_border;
+					}
 				}
 
 
@@ -340,11 +489,21 @@ body{
 
 
 		//////// sns
+		.sns{
+			@include mq( tab ){
+				margin-top: $space_m_sp;		
+			}			
+		}
 		.sns__content{
 			height: 470px;
 			border: 1px solid $color_border;
 			border-radius: 3px;
 			overflow-y: scroll;
+
+			@include mq( tab ){
+				height: 200px;
+			}			
+
 
 				&::-webkit-scrollbar{
 				width: 10px;
@@ -362,78 +521,110 @@ body{
 
 
 
-
-
+	///////// フッター
 	&__footer{
 		line-height: 1;
 		padding-top: 30px;
 		padding-bottom: 30px;
 		background-color: $blue;
 		background: $blue url( ../img/common-footer-bg.svg ) center bottom no-repeat;
-		background-size: cover;
+		background-size: 100%;
+		
 
 		a{
 			color: #fff;
-
 		}
+		
 
 		.wrap{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
+
+			@include mq( tab ){
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+
+
+		.siteFooter__logo{
+			@include mq( tab ){
+				margin-bottom: $space_s_sp;
+			}
 		}
 	}
 }
 
 
 
+////////////////////
+
+// nav
+
+////////////////////
+
 .siteNav{
-
-	@include mq( tab ){
-	}	
-
 
 	ul{
 		display: flex;
 		align-items: center;
 		flex-direction: row;
 		list-style: none;
+
 		@include mq( tab ){
-		}	
+			justify-content: center;
+			flex-direction: column;
+
+			li{
+				width: 100%;
+				line-height: 1;
+				&:after{
+					display: none;
+				}
+
+				&:last-child a{
+					margin-bottom: 0;
+					padding-bottom: 0;
+					border-bottom: none;
+				}
+			}
+
+			a{
+				margin-bottom: 1em;
+				display: block;
+				padding-right: 1em;
+				padding-bottom: 1em;
+				padding-left: 1em;
+				border-bottom: 1px solid $paleblue;
+
+			}			
+		}
 	}
 
 	li{
 
 		&:not( :last-child ){
-			&:after{
-				content:" ";
-				width: 5px;
-				height: 5px;
-				line-height: 1;
-				display: inline-block;
-				margin-right: 20px;
-				margin-left: 20px;
-				vertical-align: middle;
-				border-radius: 100%;
-				background-color: #ffffff;
+			@include mq( tab,min ){
+				&:after{
+					content:" ";
+					width: 5px;
+					height: 5px;
+					line-height: 1;
+					display: inline-block;
+					margin-right: 20px;
+					margin-left: 20px;
+					vertical-align: middle;
+					border-radius: 100%;
+					background-color: #ffffff;
+				}
 			}
 		}
 
 		@include mq( tab ){
 			width: auto;
 			flex-shrink: 0;
-			&:after{
-				content:" ";
-				width: 80px;
-				height: 1px;
-				margin-right: 0.5em;
-				margin-left: 0.5em;
-				display: inline-block;
-				vertical-align: middle;
-				background-color: $color_border;
-				mix-blend-mode: color-burn
-			}
 		}	
 
 
@@ -472,11 +663,81 @@ body{
 			}
 		}
 	}
+}
+}
 
-	&.-is-scrollify-notactive{
-		.siteNav__defaultLink{
-			display: none;
+
+
+.navToggle{
+	display: block;
+	@include mq( tab ){
+		width: 60px;
+		height: 60px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: fixed;
+		z-index: 9;
+		right: 5vw;
+		bottom: 5vw;
+		border-radius: 10000px;
+		background: linear-gradient( to right, $blue, #0477fc);
+		box-shadow: 10px 10px 20px rgba( darken($blue, 20 ), 0.1 );
+
+
+		&__line{
+			width: 38.8%;
+			height: 2px;
+			border-radius: 1000px;
+			background-color: #ffffff;
+			position: relative;
+			transition: transition();
+
+			&:before{
+				top: -6px;
+			}
+			&:after{
+				bottom: -6px;
+			}
+
+			&:before,
+			&:after{
+				content: " ";
+				width: 100%;
+				height: 2px;
+				display: block;
+				position: absolute;
+				transition: transition();
+				transform-origin: center center;
+				background-color: #ffffff;
+			}
+		}
+		@at-root .-is-navOpen .navToggle__line{
+			
+			transform: rotate( 45deg );
+
+			&:before{
+				top: 0px;
+				transform: rotate( 90deg );
+
+			}
+			&:after{
+				width: 0;
+				bottom: 0px;
+			}
+
+		}
+
+
+		&__span{
+			display: block;
+			margin-top: 1.5em;
+			line-height: 1;
+			color: #ffffff;
+			font-weight: bold;
+			font-style: normal;
+			font-size: 1rem;
 		}
 	}
-}
 }
