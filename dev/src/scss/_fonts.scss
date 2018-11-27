@@ -34,10 +34,10 @@
   font-weight: normal;
   font-style: normal;
 }
-.icon-icon-arrow:before {
-  content: "\e900";
-  color: #fff;
-}
+// .icon-icon-arrow:before {
+//   content: "\e900";
+//   color: #fff;
+// }
 
 
 
@@ -50,23 +50,23 @@
 //   url("../fonts/YakuHanJP/YakuHanJP-Regular.woff") format("woff");
 // }
 
-// @font-face {
-//   font-family: "YakuHanJP";
-//   font-style: normal;
-//   font-weight: 500;
-//   src: url("../fonts/YakuHanJP/YakuHanJP-Medium.eot");
-//   src: url("../fonts/YakuHanJP/YakuHanJP-Medium.woff2") format("woff2"),
-//   url("../fonts/YakuHanJP/YakuHanJP-Medium.woff") format("woff");
-// }
+@font-face {
+  font-family: "YakuHanJP";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/YakuHanJP/YakuHanJP-Medium.eot");
+  src: url("../fonts/YakuHanJP/YakuHanJP-Medium.woff2") format("woff2"),
+  url("../fonts/YakuHanJP/YakuHanJP-Medium.woff") format("woff");
+}
 
-// // @font-face {
-// //   font-family: "YakuHanJP";
-// //   font-style: normal;
-// //   font-weight: 700;
-// //   src: url("../fonts/YakuHanJP/YakuHanJP-Bold.eot");
-// //   src: url("../fonts/YakuHanJP/YakuHanJP-Bold.woff2") format("woff2"),
-// //   url("../fonts/YakuHanJP/YakuHanJP-Bold.woff") format("woff");
-// // }
+@font-face {
+  font-family: "YakuHanJP";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/YakuHanJP/YakuHanJP-Bold.eot");
+  src: url("../fonts/YakuHanJP/YakuHanJP-Bold.woff2") format("woff2"),
+  url("../fonts/YakuHanJP/YakuHanJP-Bold.woff") format("woff");
+}
 
 // @font-face {
 //   font-family: "YakuHanJP";

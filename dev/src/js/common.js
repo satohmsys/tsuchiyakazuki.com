@@ -67,7 +67,7 @@ getScrollVal(f);
  * scroll signal
  */
 let f2 = ($scrollVal) => {
-	500 < $scrollVal ? $body.addClass('-isScrolled') : $body.removeClass('-isScrolled')
+	500 < $scrollVal ? $body.addClass('-is-scrolled') : $body.removeClass('-is-scrolled')
 }
 
 getScrollVal(f2);

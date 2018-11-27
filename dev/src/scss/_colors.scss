@@ -27,7 +27,7 @@ $orange: #f98b06;
 
 // $maincolor: 
 // $color_main: 
-$color_border: #e4e4e4 ;
+$color_border: $paleblue ;
 $color_button: $pink;
 $color_button_secondary: $blue;
 $color_text_accent: $orange;
@@ -38,3 +38,14 @@ $color_link: $blue;
 // $color_border: 
 // $color_notactive: 
 
+
+@mixin stripe(){
+    background: linear-gradient(
+        -45deg,
+        #fff 25%, $paleblue 25%,
+        $paleblue 50%, #fff 50%,
+        #fff 75%, $paleblue 75%,
+        $paleblue
+    );
+    background-size: 10px 10px;
+}

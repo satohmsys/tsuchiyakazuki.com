@@ -10,6 +10,47 @@
 
 //////////////////
 
+// text
+
+//////////////////
+
+.iconlink{
+	display: inline-block;
+
+	@include iconfont(
+		$content: '\e900',
+		$icon-margin-right: 3px, 			
+		$top : 0, 
+		$dir: right,
+	 );		
+}
+
+
+.dots{
+	li{
+		list-style: none;
+		text-indent: -0.85em;
+		padding-left: 1em;
+
+		&:not( :last-child ){
+			margin-bottom: 10px;
+		}
+
+		&:before{
+			content: " ";
+			width: 5px;
+			height: 5px;
+			display: inline-block;
+			border-radius: 100px;
+			background-color: #ffffff;
+			
+		}
+	}
+}
+
+
+//////////////////
+
 // block level
 
 //////////////////
@@ -23,7 +64,7 @@
 
 .wrap{
 	width: 90%;
-	// width: $outerWidth;
+	max-width: $outerWidth;
 	margin-left: auto;
 	margin-right: auto;	
 	// box-sizing: border-box;
@@ -169,4 +210,14 @@
 		
 	}
 
+}
+
+
+.icon-arrow{
+	@include iconfont(
+		$content: '\e900',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );	
 }

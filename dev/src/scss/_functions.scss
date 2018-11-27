@@ -37,6 +37,6 @@
 //
 
 @function transition( $prop:all, $s:0.25s ){
-	@return easeInOutCirc($prop, $s);
+	@return easeInOut($prop, $s);
 	// @return easeInOutCirc($prop, $s);
 }
