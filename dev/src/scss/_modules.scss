@@ -36,14 +36,6 @@ body{
 	@at-root .-is-scrolled .siteHeader{
 		background-color: #ffffff;
 	}
-
-
-	.wrap{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between
-	}
-	
 	
 	 > .wrap{
 		 height: 100px;
@@ -51,6 +43,10 @@ body{
 		 flex-direction: row;
 		 justify-content: space-between;
 		 align-items: center;
+
+		@include mq( 1920, min ){
+			max-width: percentage( 1200 / 1400 );
+		}		 
 		
 
 		@include mq( sp ){
@@ -111,11 +107,10 @@ body{
 
 .siteFooter{
 	width: 100%;
-	margin-top: $space_m;
+	background-color: #ffffff;
 
 
 	@include mq( tab ){
-		margin-top: 100px;
 	}
 
 	////////メッセージ
@@ -223,6 +218,10 @@ body{
 
 			&__content{
 				margin-bottom: $space_m;
+			}
+
+			&__content__footer{
+				@include buttonEffectAsset();
 			}
 
 			&__message{

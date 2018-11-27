@@ -100,26 +100,6 @@ if ($loadingAnim.length ) {
 			document.body.classList.add('-is-loadend');
 		});
 	});
-
-	// if ($loadingAnim.length) {
-	// 	$w.on('load', function () {
-	// 		$('body').addClass('-is-ready');
-
-	// 		$('.loadingAnim .mask__element').on('transitionend', function (e) {
-	// 			e.stopPropagation();
-	// 			e.preventDefault();
-
-	// 			$('body').addClass('-is-loaded');
-
-	// 			$('.loadingAnim').on('transitionend', function (e) {
-	// 				e.stopPropagation();
-	// 				$('body').addClass('-is-loadend');
-	// 				// $loadingAnim.remove();
-	// 			});
-	// 		});
-	// 	});
-	// }
-
 }
 
 /**

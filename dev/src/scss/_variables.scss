@@ -131,3 +131,37 @@ $bpSmpMin-height : "min-height :" + heightCalc(sp, $bpSmp);
 $bpTabMax-height : "max-height :" + heightCalc(tabl, $bpTab);
 $bpTabMin-height : "min-height :" + heightCalc(tabl, $bpTab);
 $bpPcMax-height: "max-height :" + heightCalc( pc, $bpPc);
+
+
+
+
+
+/////////////////
+
+// button 
+
+/////////////////
+
+@mixin buttonEffectAsset{
+
+    &.js-effect .button{
+        &,
+        &:before{
+            opacity: 0;
+            transform: translateY( 20px );
+            transition: easeOutBack(all,1s);
+        }
+        @for $i from 0 through 6{
+            &:nth-child( #{$i} ){
+                transition-delay: #{(0.1*$i)}s;
+            }
+        }    
+    }
+    &.js-effect.-on .button{
+        &,
+        &:before{
+            opacity: 1;
+            transform: translateY( 0px );
+        }
+    }	
+}

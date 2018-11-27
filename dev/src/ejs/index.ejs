@@ -10,8 +10,125 @@
 <body class="top">
 	<%# include( '_include/_loadingAnim.ejs' ); %>
 	<%- include( '_include/header.ejs' ); %>
-	<main>
+	<main id="container">
+		<section class="mv">
+			<div class="wrap">
+				<h2 class="mv__copy">
+					私が変える。<br>
+					<span class="mv__copy__attention">あなたと、</span>変える。
+				</h2>
+				<figure class="mv__img">
+					<img src="<%- $src %>top-mv-tsuchi.png" width="460" alt="NHK報道デスクから政治家 自民党東京都北区総支部 土屋和樹">
+				</figure>
+				<ul class="mv__anchorlinks">
+					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-profilebaloon.svg" width="100" height="105" alt="NHK報道デスクから政治家に 土屋和樹とは"></a></li>
+					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-manifestbaloon.svg" width="100" height="105" alt="東京都北区の未来のために 土屋和樹の政策"></a></li>
+				</ul>
+			</div>
+			<i class="mv__bg"></i>
+		</section>
+		<section class="belowcontent">
+			<section class="section section--greeting">
+				<div class="wrap">
+					<header class="section__index">
+						<h3 class="section__index__text">
+							はじめまして、土屋和樹です
+							<!-- <img src="<%- $path %>top-greeting--index.svg" width="473" alt="はじめまして、土屋和樹です"> -->
+						</h3>
+					</header>
+					<div class="section__content">
+						<p>
+							東日本大震災、原発事故、関東・東北豪雨。<br>
+							19年半、報道という仕事を通して被災地を歩いてきました。<br>
+							そこで胸を打たれたのは、まちの人たちが懸命にふるさとの未来を考え、<br>
+							時にはもがきながらも、手を携えて前へ進む姿でした。
+						</p>
+						<p>
+							自分は東京のために何ができるだろうか。<br>
+							そう考えた末、これからは社会の傍観者から当事者として、<br>
+							「頑張るまちの人たちとともに未来を切り開きたい」という思いに至りました。<br>
+							北区はまだまだ知らないことばかりです。<br>
+							知ったかぶりをせず、多くの方の言葉に耳を傾けながら奮励努力してまいります。<br>
+							応援のほどよろしくお願いいたします。
+						</p>
+					</div>
+					<footer class="section__footer js-effect">
+						<div class="button"><a href="/profile.html">プロフィールを見る</a></div>
+					</footer>
+				</div>
+			</section>
+			<section class="section section--manifest">
+				<div class="wrap">
+					<header class="section__index">
+						<h3 class="section__index__text">
+							東京都北区を、あなたの「好きな街」にするために
+							<!-- <img src="<%- $path %>top-greeting--index.svg" width="473" alt="はじめまして、土屋和樹です"> -->
+						</h3>
+						<p class="section__index__description">
+							さあ、あなたが知りたいのは？
+						</p>
+					</header>
+					<div class="section__content">
+						<nav class="manifestIndex js-effect">
+							<ul class="manifestIndex__top buttons">
+								<li class="button button--manifest">
+									<a href="/manifest.html#manifest1">
+										<header class="button--manifest__index">
+											ひとり暮らしが
+										</header>
+										<div class="button--manifest__content">
+											いつもまでも明るく楽しく過ごせる政策
+										</div>
+									</a>
+								</li>
+								<li class="button button--manifest">
+									<a href="/manifest.html#manifest2">
+										<header class="button--manifest__index">
+											子育て世帯が
+										</header>
+										<div class="button--manifest__content">
+											もっと北区の良さを体感できる政策
+										</div>
+									</a>
+								</li>
+							</ul>
+							<ul class="manifestIndex__bottom buttons">
+								<li class="button button--secondary button--manifest">
+									<a href="/manifest.html#manifest1">
+										<header class="button--manifest__index">
+											健康志向の方が
+										</header>
+										<div class="button--manifest__content">
+											どんどん身体を動かしたくなる政策
+										</div>
+									</a>
+								</li>
+								<li class="button button--secondary button--manifest">
+									<a href="/manifest.html#manifest1">
+										<header class="button--manifest__index">
+											起業志向の方が
+										</header>
+										<div class="button--manifest__content">
+											本気でチャレンジできる政策
+										</div>
+									</a>
+								</li>
+								<li class="button button--secondary button--manifest">
+									<a href="/manifest.html#manifest2">
+										<div class="button--manifest__content">
+											「それもいいけど、うちの近所の<br>
+											話を聞いてよ！」と思ったあなたへ
+										</div>
+									</a>
+								</li>
+							</ul>
+						</nav>
 
+					</div>
+				</div>
+			</section>
+
+		</section>
 	</main>
 	<%- include( '_include/footer.ejs' ); %>
 </body>

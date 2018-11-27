@@ -73,13 +73,16 @@
 
 .buttons{
     display: flex;
-    li{
+
+    .button{
         list-style: none;
 
         &:not( :last-child ){
             margin-right: $space_s;
         }
     }
+
+	@include buttonEffectAsset();
 }
 
 
@@ -204,3 +207,132 @@
         }
     } 
 }  
+
+
+
+
+/////////////////
+
+// section manifest
+
+/////////////////
+.section--manifest{
+    background-color:#fff;
+    background-image:  url(../img/common-bg-city.svg), linear-gradient(
+        -45deg,
+        #fff 25%, #fdfdfd 25%,
+        #fdfdfd 50%, #fff 50%,
+        #fff 75%, #fdfdfd 75%,
+        #fdfdfd
+    );
+    background-size: 100% auto, 10px 10px;
+    background-repeat: no-repeat, repeat;    
+    background-position: center bottom, top left;
+
+
+    .manifestIndex{
+        max-width: 1000px;
+        margin-right: auto;
+        margin-left: auto;
+
+
+		@include buttonEffectAsset();
+
+
+        /////制作用ボタン
+        .button--manifest{
+            counter-increment: counter;
+            position: relative;
+
+            @for $i from 0 through 6{
+                &:nth-child( #{$i} ){
+                    &:before{
+                        transition-delay: #{(0.15*$i)}s;
+                    }
+                }
+            }
+
+
+            &:before{
+                content: counter( counter );
+                line-height: 1;
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top: -0.5em;
+                text-shadow: 2px 2px 10px rgba( $paleblue, 0.2 );
+                color: $paleblue;
+                font-family: 'kaiso';
+            }
+
+            a{
+                flex-direction: column;
+            }
+
+            /////見出し
+            &__index{
+                line-height: 1;
+                margin-bottom: 10px;
+                font-weight: bold;
+
+
+                &:before,
+                &:after{
+                    content: " ";
+                    width: 0;
+                    height: 0;
+                    display: inline-block;
+                    transform-origin: center bottom;
+                    border-style: solid;
+                    border-width: 20px 2.5px 0 2.5px;
+                    border-color: #fff transparent transparent transparent;                    
+                }
+                &:before{
+                    margin-right: 5px;
+                    transform: rotate(-5deg );
+                }
+                &:after{
+                    margin-left: 5px;
+                    transform: rotate( 5deg );
+                }
+            }
+        }
+
+        &__top{
+            margin-bottom: $space_s;
+
+            .button--manifest{
+                width: calc( 50% - 15px );
+                height: 120px;           
+
+                &:before{
+                    font-size: 5em;
+                }
+
+                &__index{
+                    font-size: $fontsize_m;                    
+                }
+            }
+        }
+         &__bottom{
+            counter-reset: counter 2;
+            .button--manifest{
+                width: calc( 33% - 10px );
+                height: 120px;
+            
+                &:before{
+                    font-size: 3em;
+                }
+
+                &__content{
+                    font-size: $fontsize_s;
+                }
+            }
+        }        
+    }
+
+    // &__outerwrap{
+    //     background:url(../img/common-bg-city.svg) center center no-repeat;
+    //     background-size: cover;
+    // }
+}
