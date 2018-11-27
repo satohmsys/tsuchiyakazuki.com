@@ -40,32 +40,6 @@ body{
 		flex-direction: row;
 		justify-content: space-between
 	}
-
-	&__button{
-		position: absolute;
-		height: 80px;
-		top: 0;
-		right: 0;
-
-		@include mq( 1920, min ){
-			width: 20vw;
-		}
-
-		@include mq( tab ){
-			width: 35vw;
-		}
-		@include mq( sp ){
-			width: 35vw;
-			height: 50px;
-		}
-	}
-	
-
-	@include mq( tab ){
-
-	}
-	
-	
 	
 	
 	 > .wrap{
@@ -83,12 +57,9 @@ body{
 
 	&__logo{
 		line-height: 1;
-		margin-left: auto;
 		margin-right: auto;
 
 		@include mq( tab ){
-			margin-left: 0;
-			margin-right: 0;
 			position: relative;
 			z-index: 9;
 			img{
@@ -116,155 +87,112 @@ body{
 
 .siteFooter{
 	width: 100%;
-	text-align: center;
-	position: fixed;
-	right: 0;
-	bottom: 1em;
-	left: 0;
+	margin-top: $space_m;
 
-	@at-root .about .siteFooter{
-        margin-top: #{(100/14)}em;
-		position: static;
-	}
 
 	@include mq( tab ){
 		margin-top: 100px;
-		position: static;
-	}
-
-	a{
-		color: inherit;
 	}
 
 
-	&__copyright{
-		opacity: 0.5;
-		font-family: $fontFamily_en;
-		font-size: 1rem;
+	////////// プロフ等
+	&__relatedlinks{
 
-		@include mq( sp ){
-			margin-left: 0;
-		}		
-	}
-}
+		.related{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 
+			&__section{
+				width: percentage( 580 / 1200 );
+				text-align: left;
+			}
+			&__section__index{
+				line-height: 1;
+				margin-bottom: 30px;
+				font-size: $fontsize_m;
+				font-weight: bold;
 
-.loadingAnim{
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 20;
-	color: #ffffff;
-	transition: transition( all, 0.45s);
-	transition-delay: 0.5s;
-	background-color: #fff;
-
-	@at-root .-is-loaded .loadingAnim{
-		transform: translateX(100%);
-	} 
-
-
-	svg{
-		fill: $basefontColor;
-	}
-
-
-	&__copy{
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;	
-		font-size: $fontsize_xl;
-		
-		@include mq( tab ){
-			// font-size: $fontsize_m_sp;
-		}		
-	}
-
-
-	.mask{
-		overflow: hidden;
-		display: inline-block;
-		position: relative;
-
-       &:before{
-            content: " ";
-            width: 0%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            z-index: 2;
-            left: 0;
-            transition: transition();
-            transition-delay: 0.15s;
-            background-color:#fff;
-        }
-        &__element{
-            white-space: nowrap;
-            display: inline-block;
-            transform: translateX( -100% );
-            transition: transition(all, 0.45s);
-            transition-delay: 0.235s;
-        }
-	}
-	@at-root .-is-ready .loadingAnim .mask{
-		&:before{
-            left: auto;
-            right: 0;
-            animation: maskmove 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.15s 1 normal;
+				span{
+					font-size: 2.7rem;
+					color: $color_text_accent;
+				}
+			}
 		}
-        &__element{
-            display: inherit;
-            transform: translateX( 0% );
-        } 		
-	}	
 
+
+		.profile{	
+			margin-bottom: $space_s;
+
+			&__content {
+				margin-bottom: $space_s;
+			}
+
+		}
+
+
+		.office{
+			padding: 30px;
+			border: 1px solid $color_border;
+		}
+	}
+
+
+
+	&__footer{
+		line-height: 1;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		background-color: $blue;
+		background: $blue url( ../img/common-footer-bg.svg ) center bottom no-repeat;
+		background-size: cover;
+
+		a{
+			color: #fff;
+
+		}
+
+		.wrap{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
 }
 
 
 
 .siteNav{
-	position: fixed;
-	z-index: 10;
-	top: 50%;
-	right: 0;
-	transform: translateY( -50% );
 
 	@include mq( tab ){
-		width: 100%;
-		padding-bottom: 1em;
-		top: auto;
-		bottom: 0;
-		transform: none;
 	}	
 
 
 	ul{
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		list-style: none;
 		@include mq( tab ){
-			width: 100%;
-			margin-right: 5%;
-			margin-left: 5%;
-			overflow: auto;
-			display: flex;
-			flex-wrap: nowrap;
-			-webkit-overflow-scrolling: touch;
 		}	
 	}
 
 	li{
-		width: 8em;
-		line-height: 1;
-		margin-bottom: 10px;
-		list-style: none;
+
+		&:not( :last-child ){
+			&:after{
+				content:" ";
+				width: 5px;
+				height: 5px;
+				display: inline-block;
+				margin-right: 1em;
+				margin-left: 1em;
+				vertical-align: middle;
+				border-radius: 100%;
+				background-color: #ffffff;
+			}
+		}
 
 		@include mq( tab ){
 			width: auto;
@@ -283,64 +211,17 @@ body{
 		}	
 
 
-		a{
-			width: 100%;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			padding-left: 10px;
-			display: flex;
-			align-items: center;
-			position: relative;
-			color: #666666;
-			transition: transition();
-			font-family: $fontFamily_en;
-			background-color: rgba( #ffffff,0.7 );
+	a{
 
-
-		// @include mq( tab ){
 		@include mq( tab ){
-			display: inline-block;
-			vertical-align: middle;
-			width: auto;
-			background-color: transparent;
 		}			
 
 
-			&.current{
-				font-weight: bold;
+		&.current{
+			font-weight: bold;
 
-				&:after{
-					width: 0px;
-				}
-			}
-
-
-
-			&:before,
 			&:after{
-				content: " ";
-				height: 1px;
-				margin-top: auto;
-				margin-bottom: auto;
-				transition: transition();
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-
-
-				@include mq( tab ){
-					display: none;
-				}				
-			}
-			&:after{
-				width: 30px;
-				background-color: #666;
-			}
-			@include mouseOver(){
-				&:after{
-					width: 0;
-				}
+				width: 0px;
 			}
 		}
 	}
@@ -350,4 +231,5 @@ body{
 			display: none;
 		}
 	}
+}
 }

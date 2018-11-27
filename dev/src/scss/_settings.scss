@@ -40,8 +40,8 @@ body{
 	margin-right: auto;
 	margin-bottom: 0;
 	margin-left: auto;
-	font-size: 1.4em;
-	letter-spacing: 0.1em;
+	font-size: 1.7em;
+	letter-spacing: 0.051em;
 
 	@include mq( 1921,min ){
 		font-size: #{ (14 / 1366) * 100 }vw;
@@ -112,8 +112,8 @@ main{
 
 a 
 {
-	text-decoration: none;
-	color: $link;
+	// text-decoration: none;
+	color: $color_link;
 	outline: none;
 	transition: transition();
 	
@@ -129,7 +129,7 @@ a
 	}
 	
 	@include mouseOver(){
-		color: darken($link , 15);
+		color: darken($color_link , 15);
 	}	
 	img{
 		@include mouseOver(){

@@ -1,4 +1,3 @@
-
 <footer class="siteFooter">
     <section class="siteFooter__message">
         <header class="siteFooter__message__index">
@@ -127,19 +126,23 @@
                             </h4>
                         </header>
                         <div class="sns__content">
-                            平成の終わりに会社を辞めて政治の世界へ。<br>
-                            東京都北区の希望に満ちた未来を考え、実現を目指します。<br>
-                            昭和49年（1974年）生まれ。<br>
-                            元NHK報道デスク。慶応義塾大学卒。
-                        </div>
-                       
+                            <a class="twitter-timeline" href="https://twitter.com/tsuchiyakitaku?ref_src=twsrc%5Etfw">Tweets by tsuchiyakitaku</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>                       
                     </section>
                 </section>
             </section>
         </div>
     </section>
-    <div class="wrap">
-        <div class="siteFooter__copyright">(c) Copyright HotStaff All Rights Reserved.</div>
-    </div>
+    <section class="siteFooter__footer">
+        <div class="wrap">
+            <div class="siteFooter__logo">
+                <img src="<%- $src %>common-logo-start.svg" width="220" alt="">
+            </div>
+            <div class="siteFooter__nav">
+                <%- include('nav.ejs'); %>
+            </div>
+        </div>
+    </section>
 </footer>
 <%- include( '_scripts.ejs' ); %>
