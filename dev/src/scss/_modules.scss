@@ -97,7 +97,7 @@ body{
 			right: 20px;
 			bottom: 70px;
 			opacity: 0;
-			transition: easeOutBack( all, 1s );
+			transition: easeOutBack( all, 0.75s );
 			transform: translateY( 20px );
 			pointer-events: none;
 			border-radius: 10px;
