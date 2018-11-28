@@ -12,17 +12,7 @@
 	<%# include( '_include/_loadingAnim.ejs' ); %>
 	<%- include( '_include/header.ejs' ); %>
 	<main id="container">
-		<header class="subpageMv">
-			<div class="wrap">
-				<p class="subpageMv__copy">
-					私が変える。<span class="subpageMv__copy__attention">あなたと、</span>変える。
-				</p>
-				<h1 class="subpageMv__index">
-                    <span class="subpageMv__index__label">土屋和樹の</span>
-                    <span class="subpageMv__index__title">政策</span>
-                </h1>
-			</div>
-		</header>
+        <%- include( '_include/_subpagemv.ejs',{ $title: '資料'}) %>
 		<section class="belowcontent">
             <section class="intro">
                 <div class="wrap">
