@@ -340,7 +340,7 @@
             counter-reset: counter 2;
             .button--manifest{
                 width: calc( 33% - 10px );
-                height: 120px;
+                height: 100px;
 
 				@include mq( tab ){
                     width: 100%;
