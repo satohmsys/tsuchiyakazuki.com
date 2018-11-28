@@ -23,9 +23,19 @@
     padding-top: $space_xl;
     padding-bottom: $space_xl;
 
+    @include mq( tab ){
+        padding-top: $space_xl_sp;
+        padding-bottom: $space_xl_sp;
+    }
+
+
     &__index{
         margin-bottom: $space_m;
         text-align: center;
+
+        @include mq( tab ){
+            margin-bottom: $space_m_sp;
+        }        
 
         &__text{
             height: 0;
@@ -46,6 +56,15 @@
             font-size: $fontsize_m;
         }
     }
+
+    &__content{
+        p:first-child{
+            margin-top: 0;
+        }
+        p:last-child{
+            margin-bottom: 0;
+        }
+    }
 }
 
 .siteFooter{
@@ -62,8 +81,16 @@
 
 
     &,.mv{
-        padding-top: 56%;
+        // padding-top: 56%;
         padding-top: 97vh;
+
+        @include mq( tab ){
+            padding-top: 70vh;
+        }        
+        @include mq( sp ){
+            padding-top: 80vh;
+        }        
+        
     }
 
 
@@ -87,6 +114,11 @@
         @include mq( 1920, min ){
         }
 
+        @include mq( tab ){
+            // height: auto;
+            // padding-top: 5vh;
+        }           
+
 
         .wrap{
             position: absolute;
@@ -94,6 +126,10 @@
             left: 0;
             bottom: 0;
             z-index: 1;
+
+            @include mq( tab ){
+                // position: relative;
+            }             
 
             @include mq( 1920, min ){
                 max-width: percentage( 1200 / 1400 );
@@ -111,8 +147,8 @@
 
             img{
                 @include mq( tab,min ){
-                    // width: #{( 460 / 1400 * 100 )}vw;
                     width: auto;
+                    // width: #{( 460 / 1400 * 100 )}vw;
                     height: 90.625vh;
                     // min-width: 460px;
                 }
@@ -135,8 +171,22 @@
                 font-size: #{( 7/1400 * 1000)}vw;
             }            
 
+            @include mq( tab ){
+                bottom: 20px;
+            }   
+
+            @include mq( sp ){
+                font-size: 11vw;
+            }   
+
+
             &__attention{
                 color: $pink;
+
+                @include mq( sp ){
+                   display: block;
+                }   
+
             }    
         }
 
@@ -145,6 +195,13 @@
             position: absolute;
             right: 0;
             bottom: $space_s;
+            
+            @include mq( tab ){
+                bottom: 20px;
+                right: -2.5%;
+                flex-direction: column;
+            }   
+
 
             .mv__anchorlink{
                 width: 170px;
@@ -152,6 +209,20 @@
                 list-style: none;
                 margin-right: 5px;
                 margin-left: 5px;
+
+                @include mq( tab ){
+                    width: 100px;
+                    height: 100px;
+                    margin-top: 5px;
+                    margin-right: 0;
+                    margin-bottom: 5px;
+                    margin-left: 0;
+                }   
+                @include mq( sp ){
+                    width: 90px;
+                    height: 90px;
+                }                   
+
 
                 a{
                    border-radius: 10000px;
@@ -180,8 +251,15 @@
             left: 0;
             display: block;
             opacity: 0.15;
-            background: url(../img/top-mv-bg.svg) center center no-repeat;
+            background: url(../img/top-mv-bg.svg) center center repeat;
             background-size: cover;
+            animation: bgMove 30s linear 0s infinite normal both;
+
+            @include mq( tab ){
+                animation-duration: 35s;    
+                background-repeat: repeat;
+                // background-size: auto 100%;
+            }
         }
     }
 
@@ -209,13 +287,18 @@
     .section--greeting{
         color: #ffffff;
         text-align: center;
-        background-color: rgba( $blue, 0.8 );
+        background-color: rgba( $blue, 0.9 );
 
         .section{
                 
 
             &__index__text{
                 background-image: url(../img/top-greeting-index.svg);
+
+                @include mq( sp ){
+                    padding-top: 2em;
+                    background-image: url(../img/_sp/top-greeting-index.svg);
+                }
             }
 
 
@@ -230,6 +313,10 @@
 
             &__footer{
                 margin-top: $space_s;
+
+                @include mq( tab ){
+                    margin-top: $space_s_sp;
+                }                
 
                 &.js-effect .button{
                     opacity: 0;
@@ -261,6 +348,11 @@
         .section{
             &__index__text{
                 background-image: url(../img/top-manifest-index.svg);
+
+                @include mq( sp ){
+                    padding-top: 3em;
+                    background-image: url(../img/_sp/top-manifest-index.svg);
+                }
             }
         }
     }    

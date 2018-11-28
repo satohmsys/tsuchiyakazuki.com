@@ -329,6 +329,10 @@
 
                 &:before{
                     font-size: 5em;
+
+                    @include mq( tab ){
+                        font-size: 4em;
+                    }                    
                 }
 
                 &__index{

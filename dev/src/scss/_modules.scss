@@ -34,7 +34,9 @@ body{
 	// transform: translateY( -100% );
 
 	@at-root .-is-scrolled .siteHeader{
-		background-color: #ffffff;
+		@include mq( tab,min ){
+			background-color: #ffffff;
+		}
 	}
 	
 	 > .wrap{
