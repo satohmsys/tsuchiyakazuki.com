@@ -669,7 +669,7 @@ body{
 
 
 .navToggle{
-	display: block;
+	display: none;
 	@include mq( tab ){
 		width: 60px;
 		height: 60px;
