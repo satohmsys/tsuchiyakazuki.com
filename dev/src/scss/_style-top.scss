@@ -248,6 +248,7 @@
     }
 
 
+
     /////////////////
     
     // manifest
@@ -257,6 +258,92 @@
         .section{
             &__index__text{
                 background-image: url(../img/top-manifest-index.svg);
+            }
+        }
+    }    
+
+
+
+    /////////////////
+    
+    // attnetion
+    
+    /////////////////
+    .section--attention{
+        line-height: 1;
+        background-color: $paleblue;
+
+        // &.js-effect .attention__tsuchiya{
+        //     &,
+        //     &__word
+        //     {
+        //         opacity: 0;
+        //         transform: translateY( 20px );
+        //         transition: easeOutBack(all,1s);
+        //         transition-delay: 0.15s;
+        //     }
+        //     &__word{
+        //         transition-delay: 0.30s;
+        //     }
+        // }
+        // &.js-effect.-on  .attention__tsuchiya{
+        //     &,
+        //     &__word{
+        //         opacity: 1;
+        //         transform: translateY( 0px );
+        //     }
+        // }	        
+		@include buttonEffectAsset();
+
+
+        .button{
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .attention{
+            max-width: 1000px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            position: relative;
+
+            @include mq( sp ){
+                padding-bottom: 120px;
+            }
+        }
+
+
+        .attention__tsuchiya{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include mq( sp ){
+                width: 150px;
+                right: 0;
+                left: 0;
+                margin-right: auto;
+                margin-left: auto;
+                text-align: center;
+                flex-direction: column-reverse;
+            }            
+
+            &__word{
+                line-height: 1.45;
+                margin-left: 1em;
+                font-weight: bold;
+                font-size: $fontsize_s;
+            }
+
+            img{
+                @include mq( tab ){
+                    width: 45px;
+                }                
             }
         }
     }    
