@@ -2,146 +2,196 @@
 	include( '_include/_function.ejs' );
 	$path = './';
 	$src = $path + '../img/';
+	$src_gallery = $src + 'gallery-';
 	$active = 'gallery';
 %>
 <!DOCTYPE html>
 <html>
 <%- include( '_include/head.ejs' ); %>
-<body class="gallery">
+<body class="gallery subpage">
 	<%# include( '_include/_loadingAnim.ejs' ); %>
 	<%- include( '_include/header.ejs' ); %>
 	<main id="container">
-		<section class="mv">
+		<header class="subpageMv">
 			<div class="wrap">
-				<h2 class="mv__copy">
-					私が変える。<br>
-					<span class="mv__copy__attention">あなたと、</span>変える。
-				</h2>
-				<figure class="mv__img">
-					<img src="<%- $src %>top-mv-tsuchi.png" width="460" alt="NHK報道デスクから政治家 自民党東京都北区総支部 土屋和樹">
-				</figure>
-				<ul class="mv__anchorlinks">
-					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-profilebaloon.svg" width="100" height="105" alt="NHK報道デスクから政治家に 土屋和樹とは"></a></li>
-					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-manifestbaloon.svg" width="100" height="105" alt="東京都北区の未来のために 土屋和樹の政策"></a></li>
-				</ul>
+				<p class="subpageMv__copy">
+					私が変える。<span class="subpageMv__copy__attention">あなたと、</span>変える。
+				</p>
+				<h1 class="subpageMv__index">
+                    <span class="subpageMv__index__label">土屋和樹の</span>
+                    <span class="subpageMv__index__title">政策</span>
+                </h1>
 			</div>
-			<i class="mv__bg"></i>
-		</section>
+		</header>
 		<section class="belowcontent">
-			<section class="section section--greeting">
-				<div class="wrap">
-					<header class="section__index">
-						<h3 class="section__index__text">
-							はじめまして、土屋和樹です
-							<!-- <img src="<%- $path %>top-greeting--index.svg" width="473" alt="はじめまして、土屋和樹です"> -->
-						</h3>
-					</header>
-					<div class="section__content">
-						<p>
-							東日本大震災、原発事故、関東・東北豪雨。<br>
-							19年半、報道という仕事を通して被災地を歩いてきました。<br>
-							そこで胸を打たれたのは、まちの人たちが懸命にふるさとの未来を考え、<br>
-							時にはもがきながらも、手を携えて前へ進む姿でした。
-						</p>
-						<p>
-							自分は東京のために何ができるだろうか。<br>
-							そう考えた末、これからは社会の傍観者から当事者として、<br>
-							「頑張るまちの人たちとともに未来を切り開きたい」という思いに至りました。<br>
-							北区はまだまだ知らないことばかりです。<br>
-							知ったかぶりをせず、多くの方の言葉に耳を傾けながら奮励努力してまいります。<br>
-							応援のほどよろしくお願いいたします。
-						</p>
-					</div>
-					<footer class="section__footer js-effect">
-						<div class="button"><a href="/profile.html">プロフィールを見る</a></div>
-					</footer>
-				</div>
-			</section>
-			<section class="section section--manifest">
-				<div class="wrap">
-					<header class="section__index">
-						<h3 class="section__index__text">
-							東京都北区を、あなたの「好きな街」にするために
-							<!-- <img src="<%- $path %>top-greeting--index.svg" width="473" alt="はじめまして、土屋和樹です"> -->
-						</h3>
-						<p class="section__index__description">
-							さあ、あなたが知りたいのは？
-						</p>
-					</header>
-					<div class="section__content">
-						<nav class="manifestIndex js-effect">
-							<ul class="manifestIndex__top buttons">
-								<li class="button button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											ひとり暮らしが
-										</header>
-										<div class="button--manifest__content">
-											いつもまでも明るく楽しく過ごせる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--manifest">
-									<a href="/manifest.html#manifest2">
-										<header class="button--manifest__index">
-											子育て世帯が
-										</header>
-										<div class="button--manifest__content">
-											もっと北区の良さを体感できる政策
-										</div>
-									</a>
-								</li>
-							</ul>
-							<ul class="manifestIndex__bottom buttons">
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											健康志向の方が
-										</header>
-										<div class="button--manifest__content">
-											どんどん身体を動かしたくなる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											起業志向の方が
-										</header>
-										<div class="button--manifest__content">
-											本気でチャレンジできる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest2">
-										<div class="button--manifest__content">
-											「それもいいけど、うちの近所の<br>
-											話を聞いてよ！」と思ったあなたへ
-										</div>
-									</a>
-								</li>
-							</ul>
-						</nav>
+            <section class="intro">
+                <div class="wrap">
+                    街などでお配りした資料を<br>
+                    インターネットでも読めるように更新しています。
+                </div>
+            </section>
+            <section class="section section--gallery">
+                <div class="wrap">
+                    <ul class="posts">
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                        <!-- ///// -->
+                        <!-- ***** 投稿 -->
+                        <li class="post">
+                            <!-- *** 画像 -->
+                            <figure class="post__img">
+                                <img src="<%- $src_gallery %>post-dummy.jpg" width="300" alt="">
+                            </figure>
+                            <!-- /// -->
+                            <!-- ***日付 -->
+                            <div class="post__date">
+                                2012.12.12
+                            </div>
+                            <!-- /// -->
+                            <!-- ***タイトル（30文字以内目安 -->
+                            <h2 class="post__title">
+                                資料の名目入ります。タイトル等。30文字程度でお考えください。
+                            </h2>
+                            <!-- /// -->
+                            <!-- *** ファイルへのリンク a href="/files/~~~~~ファイル名" -->
+                            <div class="button button--secondary"><a href="/files/~~~~~" target="_blank">資料を読む</a></div>
+                            <!-- /// -->
+                        </li>
+                    </ul>
+                </div>
 
-					</div>
-				</div>
-			</section>
-			<footer class="section--attention js-effect">
-				<div class="wrap">
-					<div class="attention">
-						<figure class="attention__tsuchiya">
-							<img src="<%- $src %>top-mv-tsuchi.png" width="90" alt="">
-							<figcaption class="attention__tsuchiya__word">
-								あなたのまちの課題も<br>
-								お聞かせください！
-							</figcaption>
-						</figure>
-						<div class="button"><a href="">土屋和樹の政策を見る</a></div>
-					</div>
-				</div>
-			</footer>
-
+            </section>
 		</section>
 	</main>
 	<%- include( '_include/footer.ejs' ); %>

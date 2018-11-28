@@ -1,0 +1,115 @@
+@import "colors.scss";
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+
+////////////////////////////////////////
+
+
+// top
+
+
+////////////////////////////////////////
+.gallery{
+
+
+///////////////////////
+
+// module
+
+///////////////////////
+
+
+
+///////////////////////
+
+// style
+
+///////////////////////
+
+
+//////// イントロ
+.intro{
+    text-align: center;
+}
+
+
+//////////
+.posts{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.post{
+    width: calc( 33% - 26.666px);
+    margin-bottom: $space_l;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    @include mq(tab) {
+        width: calc( 50% - 15px );
+        margin-bottom: $space_l_sp;        
+    }
+
+    &:not(:nth-child(3n)) {
+        @include mq(tab, min) {
+            margin-right: $space_s;
+        }
+    }
+    &:not(:nth-child(2n)) {
+        @include mq(tab) {
+            margin-right: $space_s_sp;
+        }
+    }
+
+    &__img{
+        line-height: 1;
+        margin-bottom: $space_s;
+
+        @include mq( tab ){
+            margin-bottom: $space_s_sp;
+        }        
+    }
+
+    &__date{
+        margin-bottom: 1em;
+        font-size: $fontsize_s;
+        line-height: 1;
+    }
+
+    &__title{
+        line-height: 1.45;
+        margin-bottom: $space_s;
+        // font-weight: bold;
+
+        @include mq( tab ){
+            margin-bottom: $space_s_sp;
+        }        
+    }
+
+    .button{
+        margin-top: auto;
+        @inculde mq(tab, min) {
+            width: 100%;
+        }
+        @inculde mq(tab) {
+            width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        @inculde mq(sp) {
+            width: 100%;
+        }
+
+    }
+
+}
+
+}
+
+

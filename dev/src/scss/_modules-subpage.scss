@@ -1,0 +1,116 @@
+//////////////////////////////////////////
+
+//module (subpage
+
+//include by style.scss
+
+//////////////////////////////////////////
+.subpage{
+
+///////////////////////
+
+// module
+
+///////////////////////
+
+.belowcontent{
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+
+///////////////////////
+
+// style
+
+///////////////////////
+    &,
+    .subpageMv {
+        // padding-top: 56%;
+        padding-top: 400px;
+
+        // @include mq(tab) {
+        //     padding-top: 40vh;
+        // }
+
+        @include mq(sp) {
+            padding-top: 300px;
+        }
+
+    }
+
+    .subpageMv{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        overflow: hidden;
+        height: 0;
+        background: $blue url(../img/common-subpage-mv.jpg) center top no-repeat;
+        background-size: 100% auto;
+
+        @include mq( tab ){
+            background-image: url(../img/_sp/common-subpage-mv.jpg);
+        }
+
+
+        .wrap{
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__copy,
+        &__index{
+            color: #ffffff;
+            font-weight: bold;
+            font-feature-settings: "palt";
+            text-shadow: 0 0 10px rgba( $blue, 0.2 );
+        }
+
+        &__index{
+            line-height: 1;
+            text-align: center;
+
+            &__label{    
+                display: block;
+                margin-bottom: 15px;
+                font-size: $fontsize_l;
+            }
+            &__title{
+                display: block;
+                font-size: 3em;
+            }
+        }
+
+        &__copy{
+            margin-bottom: 30px;
+            font-size: $fontsize_m;
+
+            &__attention {
+                color: $pink;
+            }
+        }
+    }
+
+
+
+    ////////イントロ
+    .intro{
+        padding-top: $space_l;
+        padding-bottom: $space_l;
+
+        @include mq(tab) {
+            padding-top: $space_l_sp;
+            padding-bottom: $space_l_sp;
+        }
+    }
+}
