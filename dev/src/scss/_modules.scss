@@ -131,6 +131,8 @@ body{
 .siteFooter{
 	width: 100%;
 	background-color: #ffffff;
+	position: relative;
+	z-index: 1;
 
 
 	@include mq( tab ){
@@ -177,7 +179,11 @@ body{
 				background-image: url(../img/common-footer-message-index.svg);
 				background-size: auto 100%;
 				background-repeat: no-repeat;
-				background-position: center center;				
+				background-position: center center;		
+
+				@include mq( tab ){
+					padding-top: 0.75em;
+				}		
 			}
 		}
 
