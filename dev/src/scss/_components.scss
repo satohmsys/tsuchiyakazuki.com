@@ -247,6 +247,24 @@
     background-position: center bottom, top left;
 
 
+    .section{
+        &__index{
+            &__description {
+                margin-top: 0;
+                margin-bottom: $space_m;
+                text-align: center;
+                font-weight: bold;
+                font-size: $fontsize_m;
+
+
+                @include mq(tab) {
+                    margin-bottom: $space_m_sp;
+                }
+            }
+        }
+    }
+
+
     .manifestIndex{
         max-width: 1000px;
         margin-right: auto;

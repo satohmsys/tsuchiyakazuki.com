@@ -1,0 +1,358 @@
+////////////////////////////////////////
+
+
+// manifest
+
+
+////////////////////////////////////////
+.mymanifest{
+
+
+///////////////////////
+
+// module
+
+///////////////////////
+
+.section--manifest{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.manifests{
+    margin-right: auto;
+    margin-left: auto;
+
+    .wrap{
+        max-width: 1000px;
+    }
+
+
+    .manifest{
+        list-style: none;
+        position: relative;
+        margin-bottom: 100px;
+
+
+        &.js-effect {
+            transition: easeOutBack(all, 0.75s);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        &.js-effect.-on {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+
+        &__text{
+            border-radius: 10px;
+            background-color: #fff;
+            position: relative;
+            z-index: 1;
+            // overflow-x: hidden;
+            box-shadow: 10px 10px 30px rgba( $blue, 0.2 );
+        }
+
+        &__index{
+            padding: $space_s;
+            position: relative;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: saturate( $orange, 100% );
+
+            &__label{
+                padding: 13px 20px;
+                line-height: 1;
+                position: absolute;
+                top: -40px;
+                left: $space_s ;
+                box-shadow: 5px 5px 30px rgba( $blue, 0.15 );
+                font-weight: bold;
+                border-radius: 10px;
+                background-color: #fff;
+                transition: easeOutBack(all,1s);
+
+                &:after{
+                    content: " ";
+                    width: 0;
+                    height: 0;
+                    display: inline-block;
+                    position: absolute;
+                    left: 20px;
+                    bottom: -6px;
+                    transform-origin: center bottom;
+                    border-style: solid;
+                    border-width: 7px 8px 0 8px;
+                    border-color: #fff transparent transparent transparent;
+                }
+
+                strong{
+                    padding-right: 3px;
+                    letter-spacing: 0em;
+                    font-size: $fontsize_m;
+                }
+            }
+            
+
+            &__text{
+                color: #ffffff;
+                font-size: $fontsize_l;
+            }
+        }
+        &.js-effect .manifest__index__label {
+            transition: easeOutBack(all, 0.75s);
+            transition-delay: 0.15s;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        &.js-effect.-on .manifest__index__label {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        &__content{
+            padding: $space_s;
+
+            background: url(../img/common-bg-city.svg) center bottom no-repeat;
+            background-size: 100% auto;
+
+            strong{
+                font-size: $fontsize_m;
+                letter-spacing: 0;
+                padding-right: 3px;
+            }
+        }
+
+        &__content__bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: url(../img/common-bg-city.svg) center bottom no-repeat;
+            background-size: 100% auto;
+        }
+
+
+
+        //////// 詳細
+        &__detail{
+            max-width: 750px;
+            // margin-top: $space_s;
+            // margin-top: -10px;
+            margin-right: auto;
+            // margin-bottom: -100px;
+            margin-left: auto;
+            position: relative;
+            bottom: -50px;
+            z-index: 1;
+            border: 1px solid $color_border;
+            background-color: #ffffff;
+
+
+            &__index{
+                width: 110px;
+                height: 0;
+                padding-top: 110px;
+                overflow: hidden;
+                display: block;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                background: url(../img/manifest-icon-detail.svg) center center no-repeat;
+                background-size: 100% auto;
+            }
+
+            &__line{
+                width: 100%;
+                height: 50px;
+                display: block;
+                @include stripe();
+            }
+
+            &__content{
+                padding: 30px;
+            }
+
+            &__list{
+                li{
+                    padding-left: calc( 1em + 10px) ;
+                    text-indent: -0.85em;
+                    list-style: none;
+
+                    &:not( :last-child ){
+                        margin-bottom: 10px;
+                    }
+
+                    &:before{
+                        content:" ";
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 10000px;
+                        background-color: $orange;
+                    }
+                }
+            }
+        }
+
+        &__num{
+            width: #{( 250/ 1400 * 100 )}vw;
+            padding-top: #{( 590/ 1400 * 100 )}vw;
+            position: absolute;
+            top: 5%;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @for $i from 1 through 5{
+            &:nth-child( #{$i} ){
+                .manifest__num{
+                    background-image: url(../img/manifest-section#{($i)}-num.svg);
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            .manifest__num {
+                left: 0;
+            }
+        }
+        &:nth-child(even) {
+            .manifest__num {
+                right: 0;
+            }
+        }
+    }
+}
+
+
+///////////////////////
+
+// style
+
+///////////////////////
+
+
+////////// 政策リスト
+.section--manifestlist{
+    padding-top: 100px;
+    background-image: linear-gradient(to bottom, #52B8FF, $blue);
+
+    &__footer{
+        line-height: 1;
+        position: relative;
+        text-align: center;
+
+        .tsuchiWord{
+            width: 220px;
+            height: 71px;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            transform: translateX( -220px );
+
+            //////line 
+            &:before,
+            &:after{
+                content:" ";
+                height: 3px;
+                width: 50px;
+                position: absolute;
+                right: 0;
+                display: block;
+                transform-origin: right center;
+                background-color: #ffffff;
+            }
+
+            &:before {
+                transform: rotate(15deg);
+            }
+            &:after {
+                transform: rotate(-15deg);
+            }
+
+            p{
+                width: 100%;
+                padding-top: 100%;
+                height: 0;
+                overflow: hidden;
+                padding-top: 71px;
+                background: url(../img/manifest-tsuchi-word.svg) center center no-repeat;
+            }
+        }
+
+        &.js-effect {
+            .tsuchiWord {
+                p {
+                    opacity: 0;
+                    transform: translateX(20px);
+                    transition: easeOutBack(all, 0.75s);
+                    transition-delay: 0.3s;
+                }
+
+                &:before,
+                &:after {
+                    width: 0;
+                    transition: transition();
+                }
+            }
+        }
+        &.js-effect.-on {
+            .tsuchiWord {
+                p {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+                &:before,
+                &:after {
+                    width: 50px;
+                }
+            }
+        }
+
+    }
+}
+
+
+.section--manifestlist{}
+
+
+.manifest--pickup{
+
+    .manifest__content{
+        padding-bottom: 0;
+    }
+
+    .manifest__text{
+            &:after {
+                content: " ";
+                width: 100%;
+                height: 100px;
+                // margin-top: -80px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+                // position: absolute;
+                display: block;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: $paleblue;
+            }
+    }
+
+}
+
+
+}
+
+

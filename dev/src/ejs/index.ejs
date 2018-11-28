@@ -28,7 +28,7 @@
 			<i class="mv__bg"></i>
 		</section>
 		<section class="belowcontent">
-			<section class="section section--greeting">
+			<section class="section section--greeting" id="introduction">
 				<div class="wrap">
 					<header class="section__index">
 						<h3 class="section__index__text">
@@ -59,72 +59,7 @@
 			</section>
 			<section class="section section--manifest">
 				<div class="wrap">
-					<header class="section__index">
-						<h3 class="section__index__text">
-							東京都北区を、あなたの「好きな街」にするために
-							<!-- <img src="<%- $path %>top-greeting--index.svg" width="473" alt="はじめまして、土屋和樹です"> -->
-						</h3>
-						<p class="section__index__description">
-							さあ、あなたが知りたいのは？
-						</p>
-					</header>
-					<div class="section__content">
-						<nav class="manifestIndex js-effect">
-							<ul class="manifestIndex__top buttons">
-								<li class="button button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											ひとり暮らしが
-										</header>
-										<div class="button--manifest__content">
-											いつもまでも明るく楽しく過ごせる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--manifest">
-									<a href="/manifest.html#manifest2">
-										<header class="button--manifest__index">
-											子育て世帯が
-										</header>
-										<div class="button--manifest__content">
-											もっと北区の良さを体感できる政策
-										</div>
-									</a>
-								</li>
-							</ul>
-							<ul class="manifestIndex__bottom buttons">
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											健康志向の方が
-										</header>
-										<div class="button--manifest__content">
-											どんどん身体を動かしたくなる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest1">
-										<header class="button--manifest__index">
-											起業志向の方が
-										</header>
-										<div class="button--manifest__content">
-											本気でチャレンジできる政策
-										</div>
-									</a>
-								</li>
-								<li class="button button--secondary button--manifest">
-									<a href="/manifest.html#manifest2">
-										<div class="button--manifest__content">
-											「それもいいけど、うちの近所の<br>
-											話を聞いてよ！」と思ったあなたへ
-										</div>
-									</a>
-								</li>
-							</ul>
-						</nav>
-
-					</div>
+					<%- include( '_include/_component-manifestnav.ejs' );%>
 				</div>
 			</section>
 			<footer class="section--attention js-effect">

@@ -50,11 +50,6 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
-        &__description{
-            margin-top: 30px;
-            font-weight: bold;
-            font-size: $fontsize_m;
-        }
     }
 
     &__content{
@@ -352,6 +347,10 @@
                     padding-top: 3em;
                     background-image: url(../img/_sp/top-manifest-index.svg);
                 }
+            }
+
+            &__index__description {
+                    margin-top: 30px;
             }
         }
     }    

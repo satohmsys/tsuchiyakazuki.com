@@ -105,20 +105,19 @@ if ($loadingAnim.length ) {
 /**
  * smooth scroll
  */
-if ($w.width() < 1024) {
-	$('a[href^="#"]').click(function ( e ) {
-		e.stopPropagation();
-		e.preventDefault();
+$('a[href^="#"]').click(function ( e ) {
+	e.stopPropagation();
+	e.preventDefault();
 
-		var speed = 500,
-			href = $(this).attr("href"),
-			target = $(href == "#" || href == "" ? 'html' : href),
-			position = target.offset().top;
+	var speed = 500,
+		hh = $( '.siteHeader' ).height(),
+		href = $(this).attr("href"),
+		target = $(href == "#" || href == "" ? 'html' : href),
+		position = target.offset().top - hh;
 
-		$("html, body").animate({ scrollTop: position }, speed, "swing");
-		return false;
-	});
-}
+	$("html, body").animate({ scrollTop: position }, speed, "swing");
+	return false;
+});
 
 
 export { $ };

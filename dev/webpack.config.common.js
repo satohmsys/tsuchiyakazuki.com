@@ -131,6 +131,11 @@ let config = {
 			template: './src/ejs/gallery.ejs',
 			// inject: 'head',
 		}),									
+		new HtmlWebpackPlugin({
+			filename: 'manifest.html',
+			template: './src/ejs/manifest.ejs',
+			// inject: 'head',
+		}),									
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.css', '.scss' ]
