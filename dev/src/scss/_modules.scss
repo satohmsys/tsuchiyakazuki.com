@@ -22,6 +22,7 @@ body{
 /////// ヘッダー ラッパー
 .siteHeader
 {
+	line-height: 1;
 	position: fixed;
 	z-index: 9;
 	top: 0;
@@ -76,7 +77,6 @@ body{
 
 
 	.siteNav{
-		font-weight: bold;
 
 		@include mq( tab, min ){
 			a{
@@ -91,20 +91,34 @@ body{
 					color: $color_link;
 				}		
 			}
+
+			li.comingsoon {
+				.comingsoon__text {
+					bottom: -1.75em;
+				}
+			}
 		}
 
 		@include mq( tab ){
-			padding: 1em;
+			padding: 0.5em 1em;
 			position: fixed;
-			right: 20px;
-			bottom: 70px;
+			right: 5vw;
+			// right: calc( 5vw + 20px );
+			bottom: calc( 120px + 5vw );
 			opacity: 0;
 			transition: easeOutBack( all, 0.75s );
 			transform: translateY( 20px );
 			pointer-events: none;
 			border-radius: 10px;
-			box-shadow: 5px 5px 40px rgba( $blue, 0.1 );
+			box-shadow: 5px 5px 40px rgba( darken( $blue, 10% ), 0.15 );
 			background-color: #ffffff;
+		}
+	}
+	@at-root .top:not( .-is-chatShow ) .siteHeader .siteNav{
+		right: calc(5vw + 20px);
+
+		@include mq( tab ){
+			bottom: calc(5vw + 40px);
 		}
 	}
 	@at-root .-is-navOpen .siteHeader .siteNav{
@@ -114,7 +128,6 @@ body{
 			transform: translateY( 0 );
 		}
 	}
-	
 }
 
 
@@ -308,10 +321,13 @@ body{
 					font-weight: bold;
 					font-size: 7em;
 
-					@include mq( tab ){
+					@include mq(tab) {
 						margin-top: -0.5em;
 						font-size: 15vw;
-					}						
+					}
+					@include mq(sp) {
+						font-size: 13vw;
+					}
 				}
 			}
 
@@ -334,7 +350,6 @@ body{
 
 				@include mq( tab ){
 					font-size: $fontsize_m_sp;
-					
 				}
 
 
@@ -509,7 +524,7 @@ body{
 			overflow-y: scroll;
 
 			@include mq( tab ){
-				height: 200px;
+				height: 300px;
 			}			
 
 
@@ -533,14 +548,27 @@ body{
 	&__footer{
 		line-height: 1;
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 120px;
 		background-color: $blue;
 		background: $blue url( ../img/common-footer-bg.svg ) center bottom no-repeat;
 		background-size: 100%;
+
+		@include mq( tab ){
+			padding-bottom: 30px;
+		}
 		
 
 		a{
 			color: #fff;
+		}
+
+
+		.siteNav{
+			li.comingsoon {
+				.comingsoon__text {
+					top: -2.25em;
+				}
+			}
 		}
 		
 
@@ -580,6 +608,7 @@ body{
 		align-items: center;
 		flex-direction: row;
 		list-style: none;
+		font-weight: bold;
 
 		@include mq( tab ){
 			justify-content: center;
@@ -593,26 +622,24 @@ body{
 				}
 
 				&:last-child a{
-					margin-bottom: 0;
-					padding-bottom: 0;
 					border-bottom: none;
 				}
 			}
 
 			a{
-				margin-bottom: 1em;
+
 				display: block;
+				padding-top: 1em;
 				padding-right: 1em;
 				padding-bottom: 1em;
 				padding-left: 1em;
 				border-bottom: 1px solid $paleblue;
-
+				font-weight: bold;
 			}			
 		}
 	}
 
 	li{
-
 		&:not( :last-child ){
 			@include mq( tab,min ){
 				&:after{
@@ -636,42 +663,74 @@ body{
 		}	
 
 
-	a{
-		position: relative;
-		overflow-x: hidden;
+		a{
+			position: relative;
+			overflow-x: hidden;
 
 
-		@include mq( tab,min  ){
-			&:after{
-				content: " ";
-				width: 0%;
-				height: 3px;
-				position: absolute;
-				right: 0;
-				bottom: -5px;
-				transition: transition();
-				background-color: currentColor;
-			}
-
-			@include mouseOver(){
+			@include mq( tab,min  ){
 				&:after{
+					content: " ";
+					width: 0%;
+					height: 3px;
+					position: absolute;
+					right: 0;
+					bottom: -5px;
+					transition: transition();
+					background-color: currentColor;
+				}
+
+				@include mouseOver(){
+					&:after{
+						width: 100%;
+						left: 0;
+						right: auto;
+					}
+				}
+			}			
+		}
+		&.comingsoon {
+			position: relative;
+			pointer-events: none;
+			
+			a {
+				&:before {
+					content: "";
 					width: 100%;
+					height: 100%;
+					opacity: 0.9;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
 					left: 0;
-					right: auto;
+					background-color: #fff;
 				}
 			}
-		}			
+		}
+		.comingsoon__text {
+			width: 100%;
+			display: block;
+			margin-top: 5px;
+			font-size: 1rem;
+			letter-spacing: 0.01em;
+			text-align: center;
+			opacity: 0.7;
 
+			i{
+				margin-right: 2px;
+				@include iconfont($content: '\e901',
+				$font-size: 1.25em,
+				$dir:right);
+			}
 
-		&.current{
-			font-weight: bold;
-
-			&:after{
-				width: 0px;
+			@include mq(tab, min) {
+				position: absolute;
+				left: 0;
 			}
 		}
 	}
-}
 }
 
 
@@ -688,10 +747,19 @@ body{
 		position: fixed;
 		z-index: 9;
 		right: 5vw;
-		bottom: 5vw;
+		bottom: 83px;
+		// bottom: 5vw;
+		transition: easeOutBack( all, 0.75s );
 		border-radius: 10000px;
 		background: linear-gradient( to right, $blue, #0477fc);
-		box-shadow: 10px 10px 20px rgba( darken($blue, 20 ), 0.1 );
+		box-shadow: 5px 5px 20px rgba( darken($blue, 20 ), 0.25 );
+
+		@at-root .top:not(.-is-chatShow) .navToggle {
+			bottom: 5vw;
+		}
+		// @at-root .top.-is-chatShow .navToggle {
+		// 	bottom: 5vw;
+		// }
 
 
 		&__line{
@@ -746,6 +814,92 @@ body{
 			font-weight: bold;
 			font-style: normal;
 			font-size: 1rem;
+		}
+	}
+}
+
+
+
+////////////////////
+
+// chat cion
+
+////////////////////
+
+.chat{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	z-index: 9;
+	right: 0px;
+	bottom: 65px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	text-align: center;
+	transition: transition();
+	// text-decoration: none;
+	// border-radius: 10000px;
+	// background: linear-gradient(to right, $pink, #f77cba);
+	// box-shadow: 10px 10px 20px rgba(darken($pink, 20), 0.1);
+
+    //   @include mouseOver() {
+    //   	@include mq(tab, min) {
+    //   		transform-origin: center center;
+    //   		transform: scale(0.985);
+    //   		filter: brightness(95%);
+    //   		box-shadow: 0;
+    //   	}
+    //   }
+
+	@include mq(tab) {
+		left: 0;
+		right: auto;
+	}
+
+
+	&__text{
+		line-height: 1.45;
+		width: 60px;
+		height: 0;
+		padding-top: 70px;
+		display: block;
+		overflow: hidden;
+		font-style: normal;
+		font-size: 1rem;
+		font-weight: bold;
+		background: url(../img/common-icon-chat.svg) center center no-repeat;
+		background-size: cover;
+	}
+}
+
+#Smallchat{
+	// opacity: 0;
+
+	// @at-root .-is-chatOpen{
+	// 	#Smallchat{
+	// 		opacity: 1;
+	// 	}
+	// }
+
+	iframe{
+		transition: easeOutBack( all, 0.75s )!important;
+		min-width: 140px !important;
+		min-height: 140px!important;
+		// right: 2.5vw!important;
+		// bottom: 2.5vw!important;
+		@include mq( tab ){
+			min-width: 85px !important;
+			min-height: 90px !important;
+			right: calc(5vw - 20px) !important;
+		}
+		@include mq( sp ){
+			// width: 85px !important;
+			// right: calc(5vw - 7.5px) !important;
+			bottom: 5vw;
+		    // bottom: calc(2.5vw + 60px) !important;
+			// left: 0!important;
 		}
 	}
 }

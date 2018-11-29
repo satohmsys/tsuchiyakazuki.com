@@ -354,7 +354,17 @@
                 }
 
                 &__index{
-                    font-size: $fontsize_m;                    
+                    font-size: $fontsize_m;     
+                    
+                    @include mq( 320 ){
+                        font-size: 1.15em;
+                    }                                   
+                }
+
+                &__content {
+                    @include mq(320) {
+                     font-size: $fontsize_s;
+                    }
                 }
             }
         }

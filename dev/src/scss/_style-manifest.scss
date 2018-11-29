@@ -130,8 +130,8 @@
             transform: translateY(40px);
             opacity: 0;
 
-            @inculde mq( sp ){
-                transform: translateY(30px);
+            @include mq( sp ){
+                transform: translateY(25px);
             }
         }
 

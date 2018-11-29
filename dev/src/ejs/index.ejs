@@ -8,7 +8,7 @@
 <html>
 <%- include( '_include/head.ejs' ); %>
 <body class="top">
-	<%# include( '_include/_loadingAnim.ejs' ); %>
+	<%- include( '_include/_loadingAnim.ejs' ); %>
 	<%- include( '_include/header.ejs' ); %>
 	<main id="container">
 		<section class="mv">
@@ -21,8 +21,8 @@
 					<img src="<%- $src %>top-mv-tsuchi.png" width="460" alt="NHK報道デスクから政治家 自民党東京都北区総支部 土屋和樹">
 				</figure>
 				<ul class="mv__anchorlinks">
-					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-profilebaloon.svg" width="100" height="105" alt="NHK報道デスクから政治家に 土屋和樹とは"></a></li>
-					<li class="mv__anchorlink button"><a href=""><img src="<%- $src %>top-mv-manifestbaloon.svg" width="100" height="105" alt="東京都北区の未来のために 土屋和樹の政策"></a></li>
+					<li class="mv__anchorlink button"><a href="#introduction"><img src="<%- $src %>top-mv-profilebaloon.svg" width="100" height="105" alt="NHK報道デスクから政治家に 土屋和樹とは"></a></li>
+					<li class="mv__anchorlink button"><a href="#manifest"><img src="<%- $src %>top-mv-manifestbaloon.svg" width="100" height="105" alt="東京都北区の未来のために 土屋和樹の政策"></a></li>
 				</ul>
 			</div>
 			<i class="mv__bg"></i>
@@ -57,7 +57,7 @@
 					</footer>
 				</div>
 			</section>
-			<section class="section section--manifest">
+			<section class="section section--manifest" id="manifest">
 				<div class="wrap">
 					<%- include( '_include/_component-manifestnav.ejs' );%>
 				</div>

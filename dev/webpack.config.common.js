@@ -72,7 +72,8 @@ let config = {
 								url: true,
 								minimize: true,
 								sourceMap: vars.enabledSourceMap,
-								importLoaders: 2
+								importLoaders: 2,
+								exclude: path.resolve( __dirname, 'scss/loading.scss')
 							}
 
 						},
@@ -80,14 +81,16 @@ let config = {
 							loader: 'postcss-loader',
 							options: {
 								plugins: ( loader )=>[ require( 'autoprefixer') ],
-								sourceMap: vars.enabledSourceMap
+								sourceMap: vars.enabledSourceMap,
+									exclude: path.resolve(__dirname, 'scss/loading.scss')
 							}
 						},
 						{
 							loader: 'sass-loader',
 							options: {
 								sourceMap: vars.enabledSourceMap,
-								minimize: true
+								minimize: true,
+									exclude: path.resolve(__dirname, 'scss/loading.scss')
 							}
 						}
 					]

@@ -12,6 +12,8 @@
 ////////////////////////////////////////
 .top{
 
+    background-color: $blue;
+
 
 ///////////////////////
 
@@ -63,6 +65,19 @@
 }
 
 
+#Smallchat iframe{
+    opacity: 0;
+    transform: translateY( 20px );
+    pointer-events: none;
+}
+
+&.-is-chatShow #Smallchat iframe{
+    opacity: 1;
+    transform: translateY( 0px );
+    pointer-events: all;
+}
+
+
 
 ///////////////////////
 
@@ -102,14 +117,6 @@
 		background: radial-gradient(ellipse at center, #b0ebff 0%,#0497fc 100%,#0497fc 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0ebff', endColorstr='#0497fc',GradientType=1 );
 
-        @include mq( 1920, min ){
-        }
-
-        @include mq( tab ){
-            // height: auto;
-            // padding-top: 5vh;
-        }           
-
 
         .wrap{
             position: absolute;
@@ -130,7 +137,7 @@
         &__img{
             width: 100%;
             text-align: center;
-            line-height: 1;
+            line-height: 0;
             // position: absolute;
             right: 0;
             bottom: 0;
@@ -155,6 +162,7 @@
             text-align: left;
             font-feature-settings: "palt";
             position: absolute;
+            z-index: 2;
             left: 0;
             bottom: $space_s;
 
@@ -168,7 +176,8 @@
 
             @include mq( sp ){
                 font-size: 11vw;
-                bottom: 120px;
+                bottom: 130px;
+                text-shadow: 5px 5px 20px rgba( darken( $blue, 10% ), 0.5 );
             }   
 
 
@@ -253,6 +262,44 @@
 
             @include mq( tab ){
                 animation-duration: 35s;    
+            }
+        }
+    }
+
+    //////// transition effect
+    .mv{
+        &__anchorlink,
+        &__copy,
+        &__img{
+            opacity: 0;
+            transform: translateY( 20px );
+        }
+        &__anchorlink{
+            transition: easeOutBack( all, 0.75s );
+
+            @for $i from 0 through 2 {
+                &:nth-child( #{$i} ){
+                    transition-delay: #{(1 + 0.25 * $i )}s;
+                }
+            }
+        }
+        &__copy,
+        &__img{
+            transition: transition(all, 0.5s);
+        }
+        &__img{
+            transition-delay: 0s;
+        }
+        &__copy{
+            transition-delay: 0.25s;
+        }
+
+        @at-root .-is-loaded.-is-loadend .mv{
+            &__anchorlink,
+            &__copy,
+            &__img {
+                opacity: 1;
+                transform: translateY(00px);
             }
         }
     }

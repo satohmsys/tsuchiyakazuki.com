@@ -1,22 +1,17 @@
 import $ from 'jquery';
 import { getScrollVal, $w } from './common.js';
 
-
-$( function(){
-	
-
-
-	/**
-	 * current Section 
-	 */
-	$w.on('load', function (e) {
-		let $hash = location.hash;
-		if ($hash.length) {
-			$($hash).addClass('current');
-		} else {
-			$('.section').eq(0).addClass('current');
+let $body = $('body');
+if( $body.hasClass( 'top' ) ){
+	$w.on( 'load', function(){
+		let f = ( scrollVal ) => {
+			if( $('#manifest').offset().top <  scrollVal ){
+				$body.addClass('-is-chatShow')
+			} 
+			// else {
+			// 	$body.removeClass('-is-chatShow');
+			// }
 		}
-	});
-
-});
-
+		getScrollVal( f );
+	})
+}
