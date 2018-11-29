@@ -39,6 +39,7 @@
             transition: easeOutBack(all, 0.75s);
             transform: translateY(20px);
             opacity: 0;
+            will-change: transform opacity;
         }
         &.js-effect.-on {
             transform: translateY(0px);
@@ -63,6 +64,10 @@
             border-top-right-radius: 10px;
             background-color: saturate( $orange, 100% );
 
+            @include mq( sp ){
+                padding: $space_s_sp;
+            }
+
             &__label{
                 padding: 13px 20px;
                 line-height: 1;
@@ -74,6 +79,12 @@
                 border-radius: 10px;
                 background-color: #fff;
                 transition: easeOutBack(all,1s);
+
+                @include mq(sp) {
+                    top: -1* $space_s_sp * 1.5;
+                    left: 10px;
+                    right: 10px;
+                }
 
                 &:after{
                     content: " ";
@@ -93,11 +104,18 @@
                     padding-right: 3px;
                     letter-spacing: 0em;
                     font-size: $fontsize_m;
+
+                    @include mq( sp ){
+                        padding-right: 0;
+                        display: block;
+                        padding-bottom: 2px;
+                    }                    
                 }
             }
             
 
             &__text{
+                line-height: 1.45;
                 color: #ffffff;
                 font-size: $fontsize_l;
             }
@@ -116,14 +134,20 @@
 
         &__content{
             padding: $space_s;
-
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             background: url(../img/common-bg-city.svg) center bottom no-repeat;
             background-size: 100% auto;
+
+            @include mq(sp) {
+                padding: $space_s_sp;
+            }
 
             strong{
                 font-size: $fontsize_m;
                 letter-spacing: 0;
                 padding-right: 3px;
+                font-weight: bold;
             }
         }
 
@@ -139,72 +163,9 @@
         }
 
 
-
-        //////// 詳細
-        &__detail{
-            max-width: 750px;
-            // margin-top: $space_s;
-            // margin-top: -10px;
-            margin-right: auto;
-            // margin-bottom: -100px;
-            margin-left: auto;
-            position: relative;
-            bottom: -50px;
-            z-index: 1;
-            border: 1px solid $color_border;
-            background-color: #ffffff;
-
-
-            &__index{
-                width: 110px;
-                height: 0;
-                padding-top: 110px;
-                overflow: hidden;
-                display: block;
-                position: absolute;
-                top: -10px;
-                left: -10px;
-                background: url(../img/manifest-icon-detail.svg) center center no-repeat;
-                background-size: 100% auto;
-            }
-
-            &__line{
-                width: 100%;
-                height: 50px;
-                display: block;
-                @include stripe();
-            }
-
-            &__content{
-                padding: 30px;
-            }
-
-            &__list{
-                li{
-                    padding-left: calc( 1em + 10px) ;
-                    text-indent: -0.85em;
-                    list-style: none;
-
-                    &:not( :last-child ){
-                        margin-bottom: 10px;
-                    }
-
-                    &:before{
-                        content:" ";
-                        display: inline-block;
-                        vertical-align: middle;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 10000px;
-                        background-color: $orange;
-                    }
-                }
-            }
-        }
-
         &__num{
             width: #{( 250/ 1400 * 100 )}vw;
-            padding-top: #{( 590/ 1400 * 100 )}vw;
+            padding-top: #{( 450/ 1400 * 100 )}vw;
             position: absolute;
             top: 5%;
             background-position: 0 0;
@@ -245,6 +206,25 @@
     padding-top: 100px;
     background-image: linear-gradient(to bottom, #52B8FF, $blue);
 
+    .tsuchiImg{
+        line-height: 0;
+
+        img{
+            @include mq(sp) {
+                width: 90px;  
+            }
+        }
+    }
+
+    &__tsuchi{
+        cursor: pointer;
+
+        &.-vib{
+            transform-origin: center bottom;
+            animation: vibration 0.05s linear 0s infinite normal both;
+        }
+    }
+
     &__footer{
         line-height: 1;
         position: relative;
@@ -261,6 +241,11 @@
             bottom: 0;
             transform: translateX( -220px );
 
+            @include mq( sp ){
+                transform: translateY( -70px );
+                height: 35px;
+            }            
+
             //////line 
             &:before,
             &:after{
@@ -272,13 +257,27 @@
                 display: block;
                 transform-origin: right center;
                 background-color: #ffffff;
+
+                @include mq(sp) {
+                    width: 3px;
+                    height: 50px;
+                    bottom: 0;
+                }
+
             }
 
             &:before {
                 transform: rotate(15deg);
+                @include mq(sp) {
+                    right: 0
+                }
+
             }
             &:after {
                 transform: rotate(-15deg);
+                @include mq(sp) {
+                    left: 0
+                }
             }
 
             p{
@@ -288,6 +287,11 @@
                 overflow: hidden;
                 padding-top: 71px;
                 background: url(../img/manifest-tsuchi-word.svg) center center no-repeat;
+                background-size: auto 100%;
+
+                @include mq(sp) {
+                    padding-top: 40px;
+                }
             }
         }
 
@@ -297,13 +301,24 @@
                     opacity: 0;
                     transform: translateX(20px);
                     transition: easeOutBack(all, 0.75s);
-                    transition-delay: 0.3s;
+                    transition-delay: 0.2s;
+                    will-change: transform opacity;
+
+
+                    @include mq( sp ){
+                        transform: translateY( -30px);
+                    }
                 }
 
                 &:before,
                 &:after {
                     width: 0;
                     transition: transition();
+
+                    @include mq(sp) {
+                        width: 3px;
+                        height: 0px;
+                    }
                 }
             }
         }
@@ -312,10 +327,20 @@
                 p {
                     opacity: 1;
                     transform: translateX(0px);
+
+                    @include mq(sp) {
+                        transform: translateY(-50px);
+                    }
                 }
                 &:before,
                 &:after {
                     width: 50px;
+
+                    @include mq(sp) {
+                        width: 3px;
+                        height: 50px;
+                    }
+
                 }
             }
         }
@@ -329,26 +354,106 @@
 
 .manifest--pickup{
 
+    .manifest__index{
+        background-color: #f95d06;
+    }
+
     .manifest__content{
         padding-bottom: 0;
     }
 
     .manifest__text{
-            &:after {
-                content: " ";
-                width: 100%;
-                height: 100px;
-                // margin-top: -80px;
-                border-bottom-right-radius: 10px;
-                border-bottom-left-radius: 10px;
-                // position: absolute;
-                display: block;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-color: $paleblue;
+        &:after {
+            content: " ";
+            width: 100%;
+            height: 100px;
+            // margin-top: -80px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            // position: absolute;
+            display: block;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $paleblue;
+
+            @include mq(sp) {
+                height: 60px;
             }
+        }
     }
+
+
+        //////// 詳細
+        .manifest__detail {
+            max-width: 750px;
+            // margin-top: $space_s;
+            // margin-top: -10px;
+            margin-right: auto;
+            // margin-bottom: -100px;
+            margin-left: auto;
+            position: relative;
+            bottom: -50px;
+            z-index: 1;
+            border: 1px solid $color_border;
+            background-color: #ffffff;
+
+            @include mq(sp) {
+                bottom: -30px;
+            }
+
+
+            &__index {
+                width: 110px;
+                height: 0;
+                padding-top: 110px;
+                overflow: hidden;
+                display: block;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                background: url(../img/manifest-icon-detail.svg) center center no-repeat;
+                background-size: 100% auto;
+            }
+
+            &__line {
+                width: 100%;
+                height: 50px;
+                display: block;
+                @include stripe();
+            }
+
+            &__content {
+                padding: 30px;
+
+                @include mq(sp) {
+                    padding: 20px;
+                }
+            }
+
+            &__list {
+                li {
+                    padding-left: calc(1em + 10px);
+                    text-indent: -0.85em;
+                    list-style: none;
+
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    &:before {
+                        content: " ";
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 10000px;
+                        background-color: $orange;
+                    }
+                }
+            }
+        }
+
 
 }
 
