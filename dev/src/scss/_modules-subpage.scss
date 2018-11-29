@@ -53,6 +53,7 @@
 
         @include mq( tab ){
             background-image: url(../img/_sp/common-subpage-mv.jpg);
+            background-size: auto 100%;
         }
 
 

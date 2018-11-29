@@ -37,9 +37,13 @@
 
         &.js-effect {
             transition: easeOutBack(all, 0.75s);
-            transform: translateY(20px);
+            transform: translateY(30px);
             opacity: 0;
             will-change: transform opacity;
+
+            @inculde mq(sp) {
+                transform: translateY(20px);
+            }
         }
         &.js-effect.-on {
             transform: translateY(0px);
@@ -123,8 +127,12 @@
         &.js-effect .manifest__index__label {
             transition: easeOutBack(all, 0.75s);
             transition-delay: 0.15s;
-            transform: translateY(20px);
+            transform: translateY(40px);
             opacity: 0;
+
+            @inculde mq( sp ){
+                transform: translateY(30px);
+            }
         }
 
         &.js-effect.-on .manifest__index__label {
@@ -299,7 +307,7 @@
             .tsuchiWord {
                 p {
                     opacity: 0;
-                    transform: translateX(20px);
+                    transform: translateX( 20px);
                     transition: easeOutBack(all, 0.75s);
                     transition-delay: 0.2s;
                     will-change: transform opacity;
