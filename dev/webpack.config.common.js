@@ -136,6 +136,11 @@ let config = {
 			template: './src/ejs/manifest.ejs',
 			// inject: 'head',
 		}),									
+		new HtmlWebpackPlugin({
+			filename: 'profile.html',
+			template: './src/ejs/profile.ejs',
+			// inject: 'head',
+		}),									
 	],
 	resolve: {
 		extensions: ['.js', '.jsx', '.css', '.scss' ]
