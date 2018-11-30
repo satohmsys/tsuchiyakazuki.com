@@ -61,6 +61,34 @@ let config = {
 				}]
 			},
 			{
+				test: /loading\.scss$/,
+				use: [
+					{
+						loader: 'style-loader'
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							url: true,
+							minimize: true,
+							importLoaders: 2,
+						}
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							plugins: (loader) => [require('autoprefixer')],
+						}
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							minimize: true,
+						}
+					}
+				]
+			},			
+			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				use: ExtractTextPlugin.extract({
