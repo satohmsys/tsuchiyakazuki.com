@@ -13,7 +13,6 @@ import './src/ejs/index.ejs';
 /**
 * scss監視設定
 */
-import './src/scss/loading.scss';
 import css from './src/scss/style.scss';
 
 import './src/js/common.js';
