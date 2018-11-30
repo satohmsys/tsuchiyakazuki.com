@@ -63,9 +63,12 @@ let config = {
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
+				// use: ExtractTextPlugin.extract({
+				// 	fallback: 'style-loader',
 					use: [
+						{
+							loader: 'style-loader'
+						},
 						{
 							loader: 'css-loader',
 							options: {
@@ -73,7 +76,7 @@ let config = {
 								minimize: true,
 								sourceMap: vars.enabledSourceMap,
 								importLoaders: 2,
-								exclude: path.resolve( __dirname, 'scss/loading.scss')
+								exclude: path.resolve( __dirname, './scss/loading.scss')
 							}
 
 						},
@@ -82,7 +85,7 @@ let config = {
 							options: {
 								plugins: ( loader )=>[ require( 'autoprefixer') ],
 								sourceMap: vars.enabledSourceMap,
-									exclude: path.resolve(__dirname, 'scss/loading.scss')
+									exclude: path.resolve(__dirname, './scss/loading.scss')
 							}
 						},
 						{
@@ -90,11 +93,11 @@ let config = {
 							options: {
 								sourceMap: vars.enabledSourceMap,
 								minimize: true,
-									exclude: path.resolve(__dirname, 'scss/loading.scss')
+									exclude: path.resolve(__dirname, './scss/loading.scss')
 							}
 						}
 					]
-				})
+				// })
 			},
 			{
 				test: /\.ejs$/,
@@ -116,10 +119,10 @@ let config = {
 	// },
 
 	plugins: [
-		new ExtractTextPlugin({
-			filename: vars.PATHS.dir.output + '/css/style.css',
-			allChunks: true
-		}) ,
+		// new ExtractTextPlugin({
+		// 	filename: vars.PATHS.dir.output + '/css/style.css',
+		// 	allChunks: true
+		// }) ,
 	    new CopyWebpackPlugin([{
 	      from: './src/img/',
 	      to: vars.PATHS.dir.output + '/img'
