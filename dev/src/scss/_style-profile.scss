@@ -131,7 +131,34 @@
 
 ///////// 年表
 .section--history{
-    background-image: linear-gradient(to bottom, #52B8FF, $blue);
+    background-image: 
+    url(../img/profile-history-bg-1974.svg),
+    url(../img/profile-history-bg-19xx.svg),
+    url(../img/profile-history-bg-4004.svg),
+    url(../img/profile-history-bg-1992.svg),
+    url(../img/profile-history-bg-2018.svg),
+    linear-gradient(to bottom, #52B8FF, $blue);
+    background-repeat: 
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+    background-position: 
+    73% 1%,
+    -1% 20%,
+    90% 45%,
+    0% 63%,
+    right 85%,
+    left top;
+    background-size: 
+    percentage( 400/1400 ) auto,
+    percentage( 588/1400 ) auto,
+    percentage( 600/1400 ) auto,
+    percentage( 690/1400 ) auto,
+    percentage( 477/1400 ) auto,
+    100% 100%;
 
     .historyTl{
         max-width: 660px;
