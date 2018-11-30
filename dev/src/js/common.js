@@ -38,6 +38,8 @@ $w.on('resize', function () {
 	}
 });
 
+
+
 /**
  * scroll effect
  */
@@ -73,6 +75,7 @@ let f2 = ($scrollVal) => {
 getScrollVal(f2);
 
 
+
 /**
  * loading
  */
@@ -105,6 +108,8 @@ if ($loadingAnim.length ) {
 	});
 }
 
+
+
 /**
  * smooth scroll
  */
@@ -126,23 +131,8 @@ $('a[href^="#"]').click(function ( e ) {
 
 
 /**
- * chat icon
+ * slack char
  */
-$( '#Smallchat' ).on( 'click', function( e ){
-	e.stopPropagation();
-	e.preventDefault();
-
-	// if(! $body.hasClass('-is-chatOpen') ) $('#Smallchat').click();
-
-	$body.toggleClass( '-is-chatOpen' );
-})
-
-
-export { $ };
-export { $w };
-export { getScrollVal };
-
-
 window.Smallchat = {
 	config: {
 		"slackTeamId": "T86BXQS5U",
@@ -160,7 +150,7 @@ window.Smallchat = {
 		"contact_immediately": false,
 		"contact_prompt": "Add your name and email to make sure you see our reply:",
 		"contact_reply": "{{name}}様 \n\nこの度はメッセージをいただき、ありがとうございました。お返事は、いただいたご連絡先（{{contact}}）に、数日以内に折り返しご連絡させていただきます。",
-		"custom_css": 768 < $w.width() ? ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 10px 10px 20px rgba(251,42,132,.1); } #Smallchat .Launcher-icon{ width:100px; min-width:100px; max-width:100px; min-height: 100px; max-height:100px; height:100px;}  #Smallchat .Launcher-icon .Icon{ width: 60px!important; height: 0!important; padding-top: 86px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/common-icon-chat.svg) center center no-repeat; background-size: cover;}" : ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout, #Smallchat .Layout-right.Layout-mobile, #Smallchat .Layout-left.Layout-mobile{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 10px 10px 20px rgba(251,42,132,.1); } #Smallchat .Launcher-icon{ width:60px; min-width:60px; max-width:60px; min-height: 60px; max-height:60px; height:60px;} #Smallchat .Launcher-icon .Icon{ width: 35px!important; height: 0!important; padding-top: 44px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/_sp/common-icon-chat.svg) center center no-repeat; background-size: cover;}",
+		"custom_css": 768 < $w.width() ? ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 5px 5px 30px rgba(90,90,90,.1); } #Smallchat .Launcher-icon{ width:100px; min-width:100px; max-width:100px; min-height: 100px; max-height:100px; height:100px;}  #Smallchat .Launcher-icon .Icon{ width: 60px!important; height: 0!important; padding-top: 86px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/common-icon-chat.svg) center center no-repeat; background-size: cover;}" : ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout, #Smallchat .Layout-right.Layout-mobile, #Smallchat .Layout-left.Layout-mobile{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 10px 10px 20px rgba(251,42,132,.1); } #Smallchat .Launcher-icon{ width:60px; min-width:60px; max-width:60px; min-height: 60px; max-height:60px; height:60px;} #Smallchat .Launcher-icon .Icon{ width: 35px!important; height: 0!important; padding-top: 44px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/_sp/common-icon-chat.svg) center center no-repeat; background-size: cover;}",
 		"hide_logo": false,
 		"hide_team_icon": true,
 		"launcher_pos":  "right",
@@ -184,3 +174,88 @@ window.addEventListener('load', function () {
 	script.src = 'https://static.small.chat/messenger.js';
 	document.body.appendChild(script);
 }, false);
+
+
+/**
+ * google analytics event tracking
+ */
+$('.button--readRegulation').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '共通｜フッター', '友の会', '規約を読むボタン', 1);
+});
+$('.button--inquire--pdf').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '共通｜フッター', '友の会', 'PDF申込用紙', 1);
+});
+$('.button--inquire--mail').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '共通｜フッター', '友の会', 'メール申し込み', 1);
+});
+$('.office__col__content a').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '共通｜フッター', 'その他', 'メールアドレス', 1);
+});
+$('.profile__footer a').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '共通｜フッター', 'その他', 'note', 1);
+});
+
+//////// top page
+$('.button--toIntro').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹とは？', 1);
+});
+$('.button--toManifest').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹の政策', 1);
+});
+$('.top .button--manifest--1').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', '政策', 'ひとり暮らしが~', 1);
+});
+$('.top .button--manifest--2').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', '政策', '子育て世帯が~', 1);
+});
+$('.top .button--manifest--3').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', '政策', '健康志向の方が~', 1);
+});
+$('.top .button--manifest--4').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', '政策', '起業志向の方が~', 1);
+});
+$('.top .button--manifest--5').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', 'TOPページ', '政策', 'それでも〜', 1);
+});
+
+//////// 政策
+$('.mymanifest .button--manifest--1').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '政策ページ', '政策', 'ひとり暮らしが~', 1);
+});
+$('.mymanifest .button--manifest--2').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '政策ページ', '政策', '子育て世帯が~', 1);
+});
+$('.mymanifest .button--manifest--3').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '政策ページ', '政策', '健康志向の方が~', 1);
+});
+$('.mymanifest .button--manifest--4').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '政策ページ', '政策', '起業志向の方が~', 1);
+});
+$('.mymanifest .button--manifest--5').on('click', function (e) {
+	e.stopPropagation();
+	ga('send', 'event', '政策ページ', '政策', 'それでも〜', 1);
+});
+
+
+
+
+
+export { $ };
+export { $w };
+export { getScrollVal };
