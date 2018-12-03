@@ -97,7 +97,6 @@ if ($loadingAnim.length ) {
 	}).then(( resolve ) => {
 		document.getElementsByClassName('loadingAnim')[0].addEventListener('transitionend', (e) => {
 			e.stopPropagation();
-			console.log( e ); 
 			if (e.propertyName == 'opacity'){
 				setTimeout(() => {
 					$loadingAnim.remove();
@@ -179,77 +178,136 @@ window.addEventListener('load', function () {
 /**
  * google analytics event tracking
  */
-$('.button--readRegulation').on('click', function (e) {
+$('.button--readRegulation a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '共通｜フッター', '友の会', '規約を読むボタン', 1);
+	gtag('event', '規約を読むボタン', {
+		'event_category': '共通｜フッター',
+		'event_label': '友の会'
+	});
+	// ga('send', 'event', '共通｜フッター', '友の会', '規約を読むボタン', 1);
 });
-$('.button--inquire--pdf').on('click', function (e) {
+$('.button--inquire--pdf a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '共通｜フッター', '友の会', 'PDF申込用紙', 1);
+	gtag('event', 'PDF申込用紙', {
+		'event_category': '共通｜フッター',
+		'event_label': '友の会'
+	});
+	// ga('send', 'event', '共通｜フッター', '友の会', 'PDF申込用紙', 1);
 });
-$('.button--inquire--mail').on('click', function (e) {
+$('.button--inquire--mail a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '共通｜フッター', '友の会', 'メール申し込み', 1);
+	gtag('event', 'メール申し込み', {
+		'event_category': '共通｜フッター',
+		'event_label': '友の会'
+	});
+	// ga('send', 'event', '共通｜フッター', '友の会', 'メール申し込み', 1);
 });
 $('.office__col__content a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '共通｜フッター', 'その他', 'メールアドレス', 1);
+	gtag('event', 'メールアドレス', {
+		'event_category': '共通｜フッター',
+		'event_label': 'その他'
+	});
+	// ga('send', 'event', '共通｜フッター', 'その他', 'メールアドレス', 1);
 });
 $('.profile__footer a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '共通｜フッター', 'その他', 'note', 1);
+	gtag('event', 'note', {
+		'event_category': '共通｜フッター',
+		'event_label': 'その他'
+	});
+	// ga('send', 'event', '共通｜フッター', 'その他', 'note', 1);
 });
 
 //////// top page
-$('.button--toIntro').on('click', function (e) {
+$('.button--toIntro a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹とは？', 1);
+	gtag('event', '土屋和樹とは？', {
+		'event_category': 'TOPページ',
+		'event_label': 'メインヴィジュアル'
+	});
+	// ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹とは？', 1);
 });
-$('.button--toManifest').on('click', function (e) {
+$('.button--toManifest a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹の政策', 1);
+	gtag('event', '土屋和樹の政策', {
+		'event_category': 'TOPページ',
+		'event_label': 'メインヴィジュアル'
+	});
+	// ga('send', 'event', 'TOPページ', 'メインヴィジュアル', '土屋和樹の政策', 1);
 });
-$('.top .button--manifest--1').on('click', function (e) {
+$('.top .button--manifest--1 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', '政策', 'ひとり暮らしが~', 1);
+	gtag('event', 'ひとり暮らしが〜', {
+		'event_category': 'TOPページ',
+		'event_label': '政策'
+	});
 });
-$('.top .button--manifest--2').on('click', function (e) {
+$('.top .button--manifest--2 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', '政策', '子育て世帯が~', 1);
+		gtag('event', '子育て世帯が〜', {
+			'event_category': 'TOPページ',
+			'event_label': '政策'
+		});
 });
-$('.top .button--manifest--3').on('click', function (e) {
+$('.top .button--manifest--3 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', '政策', '健康志向の方が~', 1);
+		gtag('event', '健康志向の方が〜', {
+			'event_category': 'TOPページ',
+			'event_label': '政策'
+		});
 });
-$('.top .button--manifest--4').on('click', function (e) {
+$('.top .button--manifest--4 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', '政策', '起業志向の方が~', 1);
+		gtag('event', '起業思考の方が〜', {
+			'event_category': 'TOPページ',
+			'event_label': '政策'
+		});
 });
-$('.top .button--manifest--5').on('click', function (e) {
+$('.top .button--manifest--5 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', 'TOPページ', '政策', 'それでも〜', 1);
+		gtag('event', 'それでもいいけど〜', {
+			'event_category': 'TOPページ',
+			'event_label': '政策'
+		});
 });
 
 //////// 政策
-$('.mymanifest .button--manifest--1').on('click', function (e) {
+$('.mymanifest .button--manifest--1 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '政策ページ', '政策', 'ひとり暮らしが~', 1);
+	gtag('event', 'ひとり暮らしが〜', {
+		'event_category': '政策ページ',
+		'event_label': '政策'
+	});
 });
-$('.mymanifest .button--manifest--2').on('click', function (e) {
+$('.mymanifest .button--manifest--2 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '政策ページ', '政策', '子育て世帯が~', 1);
+	gtag('event', '子育て世帯が〜', {
+		'event_category': '政策ページ',
+		'event_label': '政策'
+	});
 });
-$('.mymanifest .button--manifest--3').on('click', function (e) {
+$('.mymanifest .button--manifest--3 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '政策ページ', '政策', '健康志向の方が~', 1);
+	gtag('event', '健康志向の方が〜', {
+		'event_category': '政策ページ',
+		'event_label': '政策'
+	});
 });
-$('.mymanifest .button--manifest--4').on('click', function (e) {
+$('.mymanifest .button--manifest--4 a').on('click', function (e) {
 	e.stopPropagation();
+	gtag('event', '起業志向の方が〜', {
+		'event_category': '政策ページ',
+		'event_label': '政策'
+	});
 	ga('send', 'event', '政策ページ', '政策', '起業志向の方が~', 1);
 });
-$('.mymanifest .button--manifest--5').on('click', function (e) {
+$('.mymanifest .button--manifest--5 a').on('click', function (e) {
 	e.stopPropagation();
-	ga('send', 'event', '政策ページ', '政策', 'それでも〜', 1);
+	gtag('event', 'それでもいいけど〜', {
+		'event_category': '政策ページ',
+		'event_label': '政策'
+	});
 });
 
 
