@@ -161,6 +161,7 @@
             z-index: 2;
             left: 0;
             bottom: $space_s;
+            text-shadow: 5px 5px 20px rgba( darken( $blue, 10% ), 0.25 );
 
             @include mq( 1920, min ){
                 font-size: #{( 7/1400 * 1000)}vw;
@@ -171,9 +172,9 @@
             }   
 
             @include mq( sp ){
+                 text-shadow: 5px 5px 20px rgba( darken( $blue, 10% ), 0.5 );
                 font-size: 11vw;
                 bottom: 130px;
-                text-shadow: 5px 5px 20px rgba( darken( $blue, 10% ), 0.5 );
             }   
 
 
