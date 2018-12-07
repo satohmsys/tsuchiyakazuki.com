@@ -226,6 +226,15 @@
 
                 a{
                    border-radius: 10000px;
+
+                  @include mq(sp) {
+                    padding: 5px;
+
+                    img{
+                      width: 65px;
+                    }
+                  }
+
                     &:after{
                         font-size: 0.9em;
                         line-height: 1;
