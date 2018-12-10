@@ -557,16 +557,10 @@ body{
 	///////// フッター
 	&__footer{
 		line-height: 1;
-		padding-top: 30px;
-		padding-bottom: 120px;
 		background-color: $blue;
 		background: $blue url( ../img/common-footer-bg.svg ) center bottom no-repeat;
 		background-size: 100%;
 
-		@include mq( tab ){
-			padding-bottom: 30px;
-		}
-		
 
 		a{
 			color: #fff;
@@ -582,17 +576,31 @@ body{
 		}
 		
 
-		.wrap{
+		// .wrap,
+    &__wrap{
+      padding-top: 30px;
+      padding-bottom: 90px;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			align-items: center;
 
+        @include mq(tab) {
+          padding-bottom: 30px;
+        }
 			@include mq( tab ){
 				flex-direction: column;
 				justify-content: center;
 			}
 		}
+
+
+    &__copyright{
+      padding-bottom: 30px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 1rem;
+    }
 
 
 		.siteFooter__logo{

@@ -176,12 +176,15 @@
     </section>
     <section class="siteFooter__footer">
         <div class="wrap">
-            <div class="siteFooter__logo">
-                <img src="<%- $src %>common-logo-start.svg" width="220" alt="">
+            <div class="siteFooter__footer__wrap">
+              <div class="siteFooter__logo">
+                  <img src="<%- $src %>common-logo-start.svg" width="220" alt="">
+              </div>
+              <div class="siteFooter__nav">
+                  <%- include('nav.ejs'); %>
+              </div>
             </div>
-            <div class="siteFooter__nav">
-                <%- include('nav.ejs'); %>
-            </div>
+            <div class="siteFooter__footer__copyright">Copyright &copy; tsuchiya kazuki all righs reserved. </div>
         </div>
     </section>
 </footer>
