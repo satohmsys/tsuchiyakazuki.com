@@ -32,8 +32,8 @@
     .manifest{
         list-style: none;
         position: relative;
-        padding-top: 200px;
-        margin-top: -200px;
+        padding-top: 150px;
+        margin-top: -150px;
         margin-bottom: 100px;
 
         @include mq( tab ){

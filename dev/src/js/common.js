@@ -46,7 +46,15 @@ $w.on('resize', function () {
 
 let f = ($scrollVal) => {
 	let $jsEffect = $('.js-effect'),
-		$scrollBottom = $scrollVal + $w.height();
+  $scrollBottom = $scrollVal + $w.height();
+
+  if ($body.hasClass('mymanifest')) {
+    var $delay = $( '.manifest' ).css( 'padding-top' ),
+        $delay = $delay.replace( /px/, '' ),
+        $delay = $delay * 0.5
+  } else {
+    $delay = 0;
+  }
 
 	/**
 	* all fadein targets
@@ -55,7 +63,7 @@ let f = ($scrollVal) => {
 		$.each($jsEffect, function () {
 			let $target = $(this);
 
-			if ($target.offset().top < $scrollBottom - 90) {
+			if ($target.offset().top < $scrollBottom - 90 - $delay) {
 				$target.addClass('-on');
 			} 
 		});
