@@ -222,6 +222,10 @@
     padding-top: 100px;
     background-image: linear-gradient(to bottom, #52B8FF, $blue);
 
+    @include mq( sp ){
+      padding-top: 50px;
+    }
+
     .tsuchiImg{
         line-height: 0;
 
