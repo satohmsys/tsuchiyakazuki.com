@@ -163,8 +163,8 @@ let config = {
 			// inject: 'head',
 		}),									
 		new HtmlWebpackPlugin({
-			filename: 'manifest.html',
-			template: './src/ejs/manifest.ejs',
+			filename: 'policy.html',
+			template: './src/ejs/policy.ejs',
 			// inject: 'head',
 		}),									
 		new HtmlWebpackPlugin({
