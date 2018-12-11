@@ -126,11 +126,19 @@ $('a[href^="#"]').click(function ( e ) {
 
 	if ($body.hasClass('-is-navOpen')) $body.removeClass('-is-navOpen')
 
+  // policyページのページ内スクロール量調節
+  var offset = 0;
+  if ( $body.hasClass('mypolicy') && 768 < $w.width() ){
+    offset = 70
+  } else if( $body.hasClass('mypolicy') && $w.width() < 768 ){
+    offset = 30
+  }
+
 	var speed = 500,
-		hh = $( '.siteHeader' ).height(),
-		href = $(this).attr("href"),
-		target = $(href == "#" || href == "" ? 'html' : href),
-		position = target.offset().top - hh;
+      hh = $( '.siteHeader' ).height(),
+      href = $(this).attr("href"),
+      target = $(href == "#" || href == "" ? 'html' : href),
+      position = target.offset().top - hh + offset;
 
 	$("html, body").animate({ scrollTop: position }, speed, "swing");
 	return false;
