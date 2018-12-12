@@ -108,7 +108,7 @@ if ($loadingAnim.length ) {
 			if (e.propertyName == 'opacity'){
 				setTimeout(() => {
 					$loadingAnim.remove();
-				}, 700); 
+				}, 500); 
 			}
 			document.body.classList.add('-is-loadend');
 		}, false);
@@ -130,12 +130,16 @@ $('a[href^="#"]').click(function ( e ) {
   var offset = 0;
   if ( $body.hasClass('mypolicy') && 768 < $w.width() ){
     offset = 70
-  } else if( $body.hasClass('mypolicy') && $w.width() < 768 ){
+  } else if( $body.hasClass('mypolicy') && $w.width() <= 768 ){
     offset = 60
   }
 
+  var hh = 100;
+  if ( $w.width() <= 768) {
+    hh = 60
+  }
+
 	var speed = 500,
-      hh = $( '.siteHeader' ).height(),
       href = $(this).attr("href"),
       target = $(href == "#" || href == "" ? 'html' : href),
       position = target.offset().top - hh + offset;
