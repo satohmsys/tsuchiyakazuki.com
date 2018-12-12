@@ -131,7 +131,7 @@ $('a[href^="#"]').click(function ( e ) {
   if ( $body.hasClass('mypolicy') && 768 < $w.width() ){
     offset = 70
   } else if( $body.hasClass('mypolicy') && $w.width() < 768 ){
-    offset = 30
+    offset = 60
   }
 
 	var speed = 500,
