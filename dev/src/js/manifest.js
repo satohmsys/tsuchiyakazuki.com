@@ -11,19 +11,19 @@ $(window).on( 'load', function(){
   // policyページのスクロール量調節
   var offset = 0,
       hh = 100;
-  if ( $w.width() <= 768) {
-    // offset = 60
+  if ( $w.width() <= 640 ) {
+    offset = 100
     hh = 60;
   }
 
   if (url.indexOf("#") != -1) {
     var id = url.split("#"),
-        target = $('#' + id[id.length - 1]),
-        position = target.offset().top - hh + offset;
+        target = $('.' + id[id.length - 1]),
+        position = target.offset().top - hh - offset;
 
       $("html, body").animate({
         scrollTop: position
-      }, 0);
+      }, 500);
   }
 });
 

@@ -24,6 +24,7 @@
     margin-right: auto;
     margin-left: auto;
 
+
     .wrap{
         max-width: 1000px;
     }
@@ -39,11 +40,11 @@
 
         @include mq( tab ){
           padding-top: 100px;
-          // margin-top: -30px;
           margin-bottom: 0px;
           
           // &:first-child{
-          //   padding-top: 50px;
+          //   padding-top: 0px;
+          //   margin-top: 0;
           // }
         }
 
@@ -230,12 +231,7 @@
 
 ////////// 政策リスト
 .section--manifestlist{
-    // padding-top: 100px;
     background-image: linear-gradient(to bottom, #52B8FF, $blue);
-
-    // @include mq( sp ){
-    //   padding-top: 50px;
-    // }
 
     .tsuchiImg{
         line-height: 0;

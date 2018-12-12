@@ -108,7 +108,7 @@ if ($loadingAnim.length ) {
 			if (e.propertyName == 'opacity'){
 				setTimeout(() => {
 					$loadingAnim.remove();
-				}, 500); 
+				}, 200); 
 			}
 			document.body.classList.add('-is-loadend');
 		}, false);
