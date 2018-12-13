@@ -150,38 +150,38 @@ $('a[href^="#"]').click(function ( e ) {
 
 
 /**
- * slack char
+ * slack chat
  */
 window.Smallchat = {
-	config: {
-		"slackTeamId": "T86BXQS5U",
-		"scChannelId": "-LSU7lC8Lbw0zFQJFRTl",
-		"slackChannelId": "GEEDRKKU1",
-		"uid": "-LSU7g0YWZgPHWtCnfOr",
-		"planId": null,
-		"accountCreated": 1543489372301
-	},
-	appearance: {
+  config: {
+    "slackTeamId": "TDYTA9X7T",
+    "scChannelId": "-LTXvSW6hnS_skmOtFRG",
+    "slackChannelId": "GET3L6G4F",
+    "uid": "-LTXv1XF1Gbbp_L8STYF",
+    "planId": null,
+    "accountCreated": 1544626645242
+  },
+  appearance: {
 		"brand_color": "#0497fc",
-		"contact_dismissible": false,
-		"contact_enabled": true,
-		"contact_field_label": "質問についてのご連絡先",
-		"contact_immediately": false,
-		"contact_prompt": "Add your name and email to make sure you see our reply:",
-		"contact_reply": "{{name}}様 \n\nこの度はメッセージをいただき、ありがとうございました。お返事は、いただいたご連絡先（{{contact}}）に、数日以内に折り返しご連絡させていただきます。",
+    "contact_dismissible": false,
+    "contact_enabled": true,
+    "contact_field_label": "Email（もしくはお電話番号）",
+    "contact_immediately": false,
+    "contact_prompt": "お名前・ご連絡先を入力して下さい",
+    "contact_reply": " {{name}}様 　ありがとうございます！ 折り返し、頂いたご連絡先( {{contact}})へ数日以内にお返事します。よろしくお願いします！",
 		"custom_css": 768 < $w.width() ? ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 5px 5px 30px rgba(90,90,90,.1); } #Smallchat .Launcher-icon{ width:100px; min-width:100px; max-width:100px; min-height: 100px; max-height:100px; height:100px;}  #Smallchat .Launcher-icon .Icon{ width: 60px!important; height: 0!important; padding-top: 86px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/common-icon-chat.svg) center center no-repeat; background-size: cover;}" : ".Launcher-icon, .Launcher{background: linear-gradient(90deg,#fd8ebe,#f77cba);} #Smallchat .Layout, #Smallchat .Layout-right.Layout-mobile, #Smallchat .Layout-left.Layout-mobile{ margin: auto; top:0; right:0; bottom:0; left:0; box-shadow: 10px 10px 20px rgba(251,42,132,.1); } #Smallchat .Launcher-icon{ width:60px; min-width:60px; max-width:60px; min-height: 60px; max-height:60px; height:60px;} #Smallchat .Launcher-icon .Icon{ width: 35px!important; height: 0!important; padding-top: 44px; display: block; overflow: hidden; font-style: normal; background: url(/assets/img/_sp/common-icon-chat.svg) center center no-repeat; background-size: cover;}",
-		"hide_logo": false,
-		"hide_team_icon": true,
-		"launcher_pos":  "right",
-		"launcher_prompt": "土屋和樹に質問",
-		"launcher_type": "icon",
-		"messenger_blank": "（No messages prompt）の箇所\n土屋和樹の政策や活動について、お気軽にご意見・ご質問ください！",
-		"messenger_entry": "こちらにご入力ください。",
-		"messenger_prompt": "土屋和樹に質問（テスト",
-		"name_field_label": "お名前",
-		"offline_greeting": "オフラインです。ネットワーク環境のいいところで再度ご入力ください。",
-		"text_color": "#ffffff"
-	},
+    "hide_logo": false,
+    "hide_team_icon": true,
+    "launcher_pos": "right",
+    "launcher_prompt": "Send a message",
+    "launcher_type": "icon",
+    "messenger_blank": "土屋和樹の政策や政治活動について、ご質問・ご意見をどしどしお寄せ下さい！",
+    "messenger_entry": "かしこまらずにどうぞ",
+    "messenger_prompt": "土屋和樹にメッセージ",
+    "name_field_label": "お名前",
+    "offline_greeting": "ただいまオフラインです。ネットワーク環境の良い場所で再度ご入力ください！",
+    "text_color": "#FFFFFF"
+  }
 };
 window.addEventListener('load', function () {
 	var styles = document.createElement('link');
