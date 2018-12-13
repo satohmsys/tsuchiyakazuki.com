@@ -163,6 +163,11 @@ let config = {
 			// inject: 'head',
 		}),									
 		new HtmlWebpackPlugin({
+			filename: '_gallery-sample.html',
+			template: './src/ejs/gallery.ejs',
+			// inject: 'head',
+		}),									
+		new HtmlWebpackPlugin({
 			filename: 'policy.html',
 			template: './src/ejs/policy.ejs',
 			// inject: 'head',
