@@ -48,7 +48,7 @@ let f = ($scrollVal) => {
 	let $jsEffect = $('.js-effect'),
   $scrollBottom = $scrollVal + $w.height();
 
-  if ($body.hasClass('mymanifest')) {
+  if ($body.hasClass('mypolicy')) {
     var $delay = $( '.manifest' ).css( 'padding-top' ),
         $delay = $delay.replace( /px/, '' ),
         $delay = $delay * 0.5
@@ -293,28 +293,28 @@ $('.top .button--manifest--5 a').on('click', function (e) {
 });
 
 //////// 政策
-$('.mymanifest .button--manifest--1 a').on('click', function (e) {
+$('.mypolicy .button--manifest--1 a').on('click', function (e) {
 	e.stopPropagation();
 	gtag('event', 'ひとり暮らしが〜', {
 		'event_category': '政策ページ',
 		'event_label': '政策'
 	});
 });
-$('.mymanifest .button--manifest--2 a').on('click', function (e) {
+$('.mypolicy .button--manifest--2 a').on('click', function (e) {
 	e.stopPropagation();
 	gtag('event', '子育て世帯が〜', {
 		'event_category': '政策ページ',
 		'event_label': '政策'
 	});
 });
-$('.mymanifest .button--manifest--3 a').on('click', function (e) {
+$('.mypolicy .button--manifest--3 a').on('click', function (e) {
 	e.stopPropagation();
 	gtag('event', '健康志向の方が〜', {
 		'event_category': '政策ページ',
 		'event_label': '政策'
 	});
 });
-$('.mymanifest .button--manifest--4 a').on('click', function (e) {
+$('.mypolicy .button--manifest--4 a').on('click', function (e) {
 	e.stopPropagation();
 	gtag('event', '起業志向の方が〜', {
 		'event_category': '政策ページ',
@@ -322,7 +322,7 @@ $('.mymanifest .button--manifest--4 a').on('click', function (e) {
 	});
 	ga('send', 'event', '政策ページ', '政策', '起業志向の方が~', 1);
 });
-$('.mymanifest .button--manifest--5 a').on('click', function (e) {
+$('.mypolicy .button--manifest--5 a').on('click', function (e) {
 	e.stopPropagation();
 	gtag('event', 'それでもいいけど〜', {
 		'event_category': '政策ページ',

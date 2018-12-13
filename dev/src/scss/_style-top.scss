@@ -263,12 +263,12 @@
             opacity: 0.15;
             background: url(../img/top-mv-bg.svg) center center repeat;
             // background-size: 100% auto;
-            animation: bgMove 10000s linear 0s infinite normal both;
+            animation: bgMove 10000s linear 0s infinite reverse both;
             background-size: auto 100%;
 
             @include mq( tab ){
                 animation-duration: 20000s;    
-                animation-direction: reverse;
+                animation-direction: normal;
             }
         }
     }
