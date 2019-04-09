@@ -54,40 +54,11 @@ let config = {
 								'modules': false,
 								"useBuiltIns": true							
 								}
-							],
-							'es2015'
+							]
 						]
 					}
 				}]
-			},
-			{
-				test: /loading\.scss$/,
-				use: [
-					{
-						loader: 'style-loader'
-					},
-					{
-						loader: 'css-loader',
-						options: {
-							url: true,
-							minimize: true,
-							importLoaders: 2,
-						}
-					},
-					{
-						loader: 'postcss-loader',
-						options: {
-							plugins: (loader) => [require('autoprefixer')],
-						}
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							minimize: true,
-						}
-					}
-				]
-			},			
+			},		
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
@@ -100,8 +71,7 @@ let config = {
 								url: true,
 								minimize: true,
 								sourceMap: vars.enabledSourceMap,
-								importLoaders: 2,
-								exclude: path.resolve( __dirname, 'scss/loading.scss')
+								importLoaders: 2
 							}
 
 						},
@@ -109,16 +79,14 @@ let config = {
 							loader: 'postcss-loader',
 							options: {
 								plugins: ( loader )=>[ require( 'autoprefixer') ],
-								sourceMap: vars.enabledSourceMap,
-									exclude: path.resolve(__dirname, 'scss/loading.scss')
+								sourceMap: vars.enabledSourceMap
 							}
 						},
 						{
 							loader: 'sass-loader',
 							options: {
 								sourceMap: vars.enabledSourceMap,
-								minimize: true,
-									exclude: path.resolve(__dirname, 'scss/loading.scss')
+								minimize: true
 							}
 						}
 					]
