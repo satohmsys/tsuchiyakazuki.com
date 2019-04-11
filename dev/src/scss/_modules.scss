@@ -265,7 +265,7 @@ body{
 
 		.message{
 			max-width: 800px;
-      height: auto;
+      // height: auto;
 			padding: $space_s;
 			margin-right: auto;
 			margin-left: auto;
@@ -280,7 +280,7 @@ body{
 
 			&__index{
 				line-height: 1;
-				margin-bottom: $space_s;
+				margin-bottom: $space_s/2;
 				text-align: center;
 
 				@include mq( tab ){
@@ -314,7 +314,7 @@ body{
 				}				
 
 				&__text{
-					margin-right: $space_s;
+					// margin-right: $space_s;
 				
 					@include mq( tab ){
 						margin-right: 0;
@@ -322,12 +322,18 @@ body{
 				}
 				&__img{
 					flex-shrink: 0;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+
 
 					@include mq( tab ){
 						text-align: center;
+            position: static;
 					}
 
 					img{
+            width: 80px;
 						@include mq( tab ){
 							width: 100px;
 						}						
