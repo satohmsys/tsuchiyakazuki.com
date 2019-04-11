@@ -218,8 +218,54 @@ body{
 		}
 
 
+    .swiper-container{
+      @include mq( 'sp' ){
+        padding-right: 6%;
+        padding-left: 6%;
+      }
+    }
+
+
+    .swiper-slide{
+      transition: transition();
+      opacity: 0.2;
+      transform: scale(0.8);
+
+      &.swiper-slide-active{
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      z-index: 8;
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      transform-origin: center center;
+      border-top: 2px solid $pink;
+      border-left: 2px solid $pink;
+      cursor: pointer;
+
+    }
+    .swiper-button-prev{
+      transform: rotate(-45deg);
+      left: 5%;
+    }
+    .swiper-button-next{
+      transform: rotate(135deg);
+      right: 5%;
+    }
+
+
 		.message{
 			max-width: 800px;
+      height: auto;
 			padding: $space_s;
 			margin-right: auto;
 			margin-left: auto;
@@ -283,7 +329,7 @@ body{
 
 					img{
 						@include mq( tab ){
-							width: 150px;
+							width: 100px;
 						}						
 					}
 				}

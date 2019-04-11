@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Swiper from 'swiper';
 
 let $w = $(window),
 	$body = $('body'),
@@ -193,6 +194,29 @@ window.addEventListener('load', function () {
 	script.src = 'https://static.small.chat/messenger.js';
 	document.body.appendChild(script);
 }, false);
+
+
+
+/**
+ * slider
+ */
+
+var mySwiper = new Swiper('.swiper-container', {
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  slidesPerView: 2,
+  spaceBetween: 10,
+  centeredSlides: true,  
+  breakpoints: {
+    500: {
+      slidesPerView: 1,
+    }
+  }  
+})
+
 
 
 /**
